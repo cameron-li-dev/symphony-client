@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.carousel {
+    padding: 0;
+    list-style-type: none;
+    user-select: none;
+}
+
+.item {
+    color: black;
+}
+
+.item--active {
+    color: orange;
+}
+
+.item:hover, .item--active:hover { // TODO: This is meant to glow
+    cursor: pointer;
+}
