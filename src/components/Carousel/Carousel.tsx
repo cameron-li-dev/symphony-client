@@ -37,30 +37,13 @@ export const Carousel = (props: { items: any[], displayExtra: number }) => {
         const prefix = selected - displayExtra;
         if (prefix < 0) {
             counter = addButtons(carouselButtons, items.length + prefix, items.length, true, counter);
-            // for (let extra = items.length + prefix; extra < items.length; extra++) {
-            //     carouselButtons.push(
-            //         <CarouselButton active={ selected } index={ extra } onClick={() => setSelected(extra)}/>
-            //     );
-            //     counter++;
-            // }
         }
         else if (selected === items.length) {
             counter = addButtons(carouselButtons, items.length - prefix + 1, items.length - 1, true, counter);
-            // for (let extra = items.length - prefix + 1; extra < items.length - 1; extra++) {
-            //     carouselButtons.push(
-            //         <CarouselButton active={ selected } index={ extra } onClick={() => setSelected(extra)}/>
-            //     );
-            //     counter++;
-            // }
         }
 
         if (counter < displayExtra) {
             addButtons(carouselButtons, selected - displayExtra + counter, selected, true, counter);
-            // for (let extra = selected - displayExtra + counter; extra < selected; extra++) {
-            //     carouselButtons.push(
-            //         <CarouselButton active={ selected } index={ extra } onClick={() => setSelected(extra)}/>
-            //     );
-            // }
         }
         carouselButtons.push(
             <CarouselButton active={ selected } index={ selected } onClick={() => setSelected(selected)}/>
@@ -80,11 +63,6 @@ export const Carousel = (props: { items: any[], displayExtra: number }) => {
         if (counter < displayExtra) {
             const suffix = displayExtra - counter;
             addButtons(carouselButtons, 0, suffix, true, counter)
-            // for (let extra = 0; extra < suffix; extra++) {
-            //     carouselButtons.push(
-            //         <CarouselButton active={ selected } index={ extra } onClick={() => setSelected(extra)}/>
-            //     );
-            // }
         }
     return (
         <div className="carousel-container">
