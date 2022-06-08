@@ -1,0 +1,25 @@
+$ms: 320;
+$mm: 375;
+$ml: 425;
+$t: 768;
+$l: 1024;
+$xl: 1440;
+$xxl: 2560;
+
+@mixin breakpoint($point) {
+  @if $point == $xxl {
+    @media (min-width: $xxl) { @content ; }
+  }
+  @else if $point == $xl {
+    @media (min-width: $xl) { @content ; }
+  }
+  @else if $point == $l {
+    @media (min-width: $l) { @content ; }
+  }
+  @else if $point == $t {
+    @media (min-width: $t) { @content ; }
+  }
+  @else if $point == $ms {
+    @media (max-width: $ms) { min-width: $ms; @content ; }
+  }
+}

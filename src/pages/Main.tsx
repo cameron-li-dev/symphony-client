@@ -1,29 +1,15 @@
 import React from "react";
 import "./Main.scss";
+import Carousel from "../components/Carousel/Carousel";
 
 export const Main = () => {
-    const [selected, setSelected] = React.useState<number>(0);
-
-    const items: any[] = [];
-    for (let i = 0; i < 3; i++) {
-        const className: string = selected === i ? "item--active" : "item";
-        items.push(
-            (
-                <li className={className} onClick={() => setSelected(i)}>
-                    Test 1
-                </li>
-            )
-        )
-    }
+    const pages = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
     return (
         <div className="container">
-            <ul className="carousel">
-                {items}
-            </ul>
-            <div>
-                Testing
-            </div>
+            <Carousel displayExtra={1} items={ pages }/>
+            <Carousel displayExtra={2} items={ pages }/>
+            <Carousel displayExtra={3} items={ pages }/>
         </div>
     )
 }

@@ -1,0 +1,15 @@
+@import "../../Styles/globals";
+
+
+.carousel-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.carousel-content {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  user-select: none;
+  text-align: center;
+}

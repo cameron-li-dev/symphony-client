@@ -1,0 +1,15 @@
+@import "../../../Styles/globals";
+
+
+.carousel-button {
+  color: black;
+}
+
+.carousel-button--active {
+  color: orange;
+  font-size: 24px;
+}
+
+.carousel-button:hover, .carousel-button--active:hover { // TODO: This is meant to glow
+  cursor: pointer;
+}
