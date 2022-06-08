@@ -1,12 +1,15 @@
 import React from "react";
-import './Carousel.scss';
-import CarouselButton from "./CarouselComponents/CarouselButton";
-import CarouselCard from "./CarouselComponents/CarouselCard";
+import './carousel.scss';
+import CarouselButton from "./carousel-components/carousel-button";
+import CarouselCard from "./carousel-components/carousel-card";
 
 export const Carousel = (props: { items: any[], displayExtra: number }) => {
     const [selected, setSelected] = React.useState<number>(0);
-    const [currentItem, setCurrentItem] = React.useState();
     const { items, displayExtra } = props;
+
+    const onSelect = (index: number) => {
+        setSelected(index);
+    }
 
     if (items.length < displayExtra || items.length < 3) {
         return EmptyCarousel();
@@ -17,14 +20,14 @@ export const Carousel = (props: { items: any[], displayExtra: number }) => {
         if (isIncrement) {
             for (let extra = start; extra < finish; extra++) {
                 carouselButtons.push(
-                    <CarouselButton active={ selected } index={ extra } onClick={() => setSelected(extra)}/>
+                    <CarouselButton active={ selected } index={ extra } onClick={() => onSelect(extra)}/>
                 );
                 tempCount++;
             }
         } else {
             for (let extra = start; extra < finish; extra--) {
                 carouselButtons.push(
-                    <CarouselButton active={ selected } index={ extra } onClick={() => setSelected(extra)}/>
+                    <CarouselButton active={ selected } index={ extra } onClick={() => onSelect(extra)}/>
                 );
                 tempCount++;
             }
@@ -46,14 +49,14 @@ export const Carousel = (props: { items: any[], displayExtra: number }) => {
             addButtons(carouselButtons, selected - displayExtra + counter, selected, true, counter);
         }
         carouselButtons.push(
-            <CarouselButton active={ selected } index={ selected } onClick={() => setSelected(selected)}/>
+            <CarouselButton active={ selected } index={ selected } onClick={() => onSelect(selected)}/>
         );
         counter = 0;
         const suffix = selected + displayExtra + 1;
         for (let extra = selected + 1; extra < suffix; extra++) {
             if (extra < items.length) {
                 carouselButtons.push(
-                    <CarouselButton active={ selected } index={ extra } onClick={() => setSelected(extra)}/>
+                    <CarouselButton active={ selected } index={ extra } onClick={() => onSelect(extra)}/>
                 );
                 counter++;
             } else {
@@ -78,10 +81,6 @@ const EmptyCarousel = () => {
     return (
         <div/>
     )
-}
-
-const InfiniteCarousel = () => {
-
 }
 
 export default Carousel;

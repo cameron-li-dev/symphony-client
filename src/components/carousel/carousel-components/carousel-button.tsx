@@ -1,5 +1,5 @@
 import React, {MouseEventHandler} from "react";
-import './CarouselButton.scss';
+import './carousel-button.scss';
 
 export const CarouselButton = (props: { active: number, index: number, onClick?: MouseEventHandler<HTMLDivElement> }) => {
     const { active, index, onClick } = props;
