@@ -3,13 +3,24 @@
 
 .carousel-button {
   color: black;
+  opacity: 0.5;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .carousel-button--active {
-  color: orange;
+  color: orangered;
   font-size: 24px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.carousel-button, .carousel-button--active {
+  transition: ease-in-out opacity;
+  transition-duration: 0.2s;
 }
 
 .carousel-button:hover, .carousel-button--active:hover { // TODO: This is meant to glow
   cursor: pointer;
+  opacity: 1;
 }

@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Path finding",
+      "description": "Implementation of Djikstra's and A* Search",
+      "link": "/path-find"
+    },
+    {
+      "title": "Valorant Crosshairs",
+      "description": "Create and view Valorant crosshairs",
+      "link": "/valorant"
+    },
+    {
+      "title": "Component Design",
+      "description": "This is where React components are tested and created",
+      "link": "/components"
+    }
+]
