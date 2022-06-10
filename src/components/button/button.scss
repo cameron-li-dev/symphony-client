@@ -1,0 +1,12 @@
+.button-container {
+  padding: 8px;
+  border-radius: 8px;
+  background: orangered;
+  box-shadow: 3px 3px 12px -8px rgba(0,0,0,0.6);
+  transition-duration: 0.5s;
+}
+
+.button-container:hover {
+  box-shadow: 3px 3px 12px -6px rgba(0,0,0,0.75);
+}
+

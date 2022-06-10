@@ -13,5 +13,20 @@
       "title": "Component Design",
       "description": "This is where React components are tested and created",
       "link": "/components"
-    }
+    },
+  {
+    "title": "Path finding 123",
+    "description": "Implementation of Djikstra's and A* Search",
+    "link": "/path-find"
+  },
+  {
+    "title": "Valorant Crosshairs 42412",
+    "description": "Create and view Valorant crosshairs",
+    "link": "/valorant"
+  },
+  {
+    "title": "Component Design 42242",
+    "description": "This is where React components are tested and created",
+    "link": "/components"
+  }
 ]
