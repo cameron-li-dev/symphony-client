@@ -3,6 +3,7 @@ import './carousel.scss';
 import CarouselButton from "./carousel-components/carousel-button";
 import CarouselCard from "./carousel-components/carousel-card";
 import IFeature from "../../data/interfaces/IFeature";
+import CarouselStripe from "./carousel-components/carousel-stripe";
 
 export const Carousel = (props: { features: IFeature[], displayExtra: number }) => {
     const [selected, setSelected] = React.useState<number>(0);
@@ -22,14 +23,14 @@ export const Carousel = (props: { features: IFeature[], displayExtra: number }) 
         if (isIncrement) {
             for (let extra = start; extra < finish; extra++) {
                 carouselButtons.push(
-                    <CarouselButton key={"carousel-button-" + extra} title={ features[extra].title } active={ selected } index={ extra } onClick={() => onSelect(extra)}/>
+                    <CarouselButton key={"carousel-button-" + extra} feature={ features[extra] } active={ selected } index={ extra } onClick={() => onSelect(extra)}/>
                 );
                 tempCount++;
             }
         } else {
             for (let extra = start; extra < finish; extra--) {
                 carouselButtons.push(
-                    <CarouselButton key={"carousel-button-" + extra} title={ features[extra].title } active={ selected } index={ extra } onClick={() => onSelect(extra)}/>
+                    <CarouselButton key={"carousel-button-" + extra} feature={ features[extra] } active={ selected } index={ extra } onClick={() => onSelect(extra)}/>
                 );
                 tempCount++;
             }
@@ -51,14 +52,14 @@ export const Carousel = (props: { features: IFeature[], displayExtra: number }) 
             addButtons(carouselButtons, selected - displayExtra + counter, selected, true, counter);
         }
         carouselButtons.push(
-            <CarouselButton key={"carousel-button-selected"} title={ features[selected].title } active={ selected } index={ selected } onClick={() => onSelect(selected)}/>
+            <CarouselButton key={"carousel-button-selected"} feature={ features[selected] } active={ selected } index={ selected } onClick={() => onSelect(selected)}/>
         );
         counter = 0;
         const suffix = selected + displayExtra + 1;
         for (let extra = selected + 1; extra < suffix; extra++) {
             if (extra < features.length) {
                 carouselButtons.push(
-                    <CarouselButton key={"carousel-button-" + extra} title={ features[extra].title } active={ selected } index={ extra } onClick={() => onSelect(extra)}/>
+                    <CarouselButton key={"carousel-button-" + extra} feature={ features[extra] } active={ selected } index={ extra } onClick={() => onSelect(extra)}/>
                 );
                 counter++;
             } else {
@@ -71,11 +72,16 @@ export const Carousel = (props: { features: IFeature[], displayExtra: number }) 
         }
     return (
         <div className="carousel-container">
-            <ul className="carousel-buttons" style={{width: longestLength}}>
-                { carouselButtons }
-            </ul>
-            <div className="carousel-content">
-                <CarouselCard item={ features[selected]}/>
+            <div className="carousel-display-large">
+                <ul className="carousel-buttons" style={{width: longestLength}}>
+                    { carouselButtons }
+                </ul>
+                <div className="carousel-content">
+                    <CarouselCard item={ features[selected]}/>
+                </div>
+            </div>
+            <div className="carousel-display-small">
+                <CarouselStripe/>
             </div>
         </div>
     )

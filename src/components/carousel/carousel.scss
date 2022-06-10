@@ -3,7 +3,22 @@
 
 .carousel-container {
   display: flex;
-  flex-direction: row;
+}
+
+.carousel-display-large {
+  display: none;
+
+  @include breakpoint($t) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.carousel-display-small {
+
+  @include breakpoint($t) {
+    display: none;
+  }
 }
 
 .carousel-buttons {
@@ -17,6 +32,11 @@
 .carousel-content {
   padding: 8px;
   transition-duration: 0.2s;
+
+  @include breakpoint($t) {
+    display: block;
+    width: 450px;
+  }
   @include breakpoint($l) {
     width: 600px;
   }

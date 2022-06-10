@@ -1,5 +1,4 @@
 import "./App.css";
-import Main from "./pages/main/main";
 import {
     BrowserRouter as Router,
     Routes,
@@ -8,19 +7,18 @@ import {
 import Valorant from "./pages/valorant/valorant";
 import PathFind from "./pages/path-find/path-find";
 import Components from "./pages/components/components";
+import Blog from "./pages/blog/blog";
+import Main from "./pages/main/main";
 
 function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/path-find" element={<PathFind/>}>
-                </Route>
-                <Route path="/valorant" element={<Valorant/>}>
-                </Route>
-                <Route path="/components" element={<Components/>}>
-                </Route>
-                <Route path="/" element={<Main/>}>
-                </Route>
+                <Route path="/path-find" element={<PathFind/>}/>
+                <Route path="/valorant" element={<Valorant/>}/>
+                <Route path="/components" element={<Components/>}/>
+                <Route path="/blog" element={<Blog/>}/>
+                <Route path="/" element={<Main/>}/>
             </Routes>
         </Router>
     );
