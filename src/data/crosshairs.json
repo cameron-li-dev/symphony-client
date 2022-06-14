@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Kalna",
+    "config": {
+      "colour": "White",
+      "outlines": {
+        "outlineOpacity": 0,
+        "outlineThickness": 1
+      },
+      "centerDot": {
+        "centerDotOpacity": 0,
+        "centerDotThickness": 2
+      },
+      "innerLines": {
+        "lineOpacity": 0.75,
+        "lineLength": 2,
+        "lineThickness": 1,
+        "lineOffset": 1
+      },
+      "outerLines": {
+        "outerLineOpacity": 1,
+        "outerLineLength": 0,
+        "outerLineThickness": 2,
+        "outerLineOffset": 10
+      }
+    }
+  },
+  {
+    "title": "Kalna 2",
+    "config": {
+      "colour": "White",
+      "outlines": {
+        "outlineOpacity": 1,
+        "outlineThickness": 1
+      },
+      "centerDot": {
+        "centerDotOpacity": 1,
+        "centerDotThickness": 2
+      },
+      "innerLines": {
+        "lineOpacity": 0.75,
+        "lineLength": 2,
+        "lineThickness": 1,
+        "lineOffset": 1
+      },
+      "outerLines": {
+        "outerLineOpacity": 1,
+        "outerLineLength": 0,
+        "outerLineThickness": 2,
+        "outerLineOffset": 10
+      }
+    }
+  }
+]

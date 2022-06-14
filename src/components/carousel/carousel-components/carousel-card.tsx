@@ -19,14 +19,12 @@ export const CarouselCard = (props: { item: IFeature }) => {
     const [cardState, setCardState] = React.useState<CarouselCardState>(CarouselCardState.Tick);
 
     useEffect(() => {
-        console.log("item has changed", item);
         if (cardState === CarouselCardState.Tick) {
-            console.log("Tock");
             setCardState(CarouselCardState.Tock);
         } else {
-            console.log("Tick");
             setCardState(CarouselCardState.Tick);
         }
+    // eslint-disable-next-line
     }, [item])
 
     return (

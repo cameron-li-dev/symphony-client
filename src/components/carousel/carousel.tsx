@@ -106,7 +106,7 @@ function getTextWidth(text: string) {
     const context = canvas.getContext('2d');
 
     if (!!context) {
-        context.font = "500 24px -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif";
+        context.font = "500 28px -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif";
 
         return context.measureText(text).width;
     }

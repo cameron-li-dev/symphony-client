@@ -18,5 +18,10 @@
       "title": "Development Blog",
       "description": "This is where I should be recording all my thoughts and insights while developing this website",
       "link": "/blog"
+    },
+    {
+      "title": "Skills",
+      "description": "What I'm great at and what I'm trying to learn",
+      "link": "/skills"
     }
 ]

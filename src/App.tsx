@@ -9,6 +9,7 @@ import PathFind from "./pages/path-find/path-find";
 import Components from "./pages/components/components";
 import Blog from "./pages/blog/blog";
 import Main from "./pages/main/main";
+import Skills from "./pages/skills/skills";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/valorant" element={<Valorant/>}/>
                 <Route path="/components" element={<Components/>}/>
                 <Route path="/blog" element={<Blog/>}/>
+                <Route path="/skills" element={<Skills/>}/>
                 <Route path="/" element={<Main/>}/>
             </Routes>
         </Router>
