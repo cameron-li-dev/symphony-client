@@ -1,28 +1,6 @@
 [
   {
-    "title": "Kalna",
-    "config": {
-      "colour": "White",
-      "outlines": {
-        "outlineOpacity": 0,
-        "outlineThickness": 1
-      },
-      "centerDot": {
-        "centerDotOpacity": 0,
-        "centerDotThickness": 2
-      },
-      "innerLines": {
-        "lineOpacity": 0.75,
-        "lineLength": 2,
-        "lineThickness": 1,
-        "lineOffset": 1
-      },
-      "outerLines": {
-        "lineOpacity": 1,
-        "lineLength": 0,
-        "lineThickness": 2,
-        "lineOffset": 10
-      }
-    }
+    "title": "Default",
+    "config": "0"
   }
 ]

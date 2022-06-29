@@ -63,28 +63,25 @@ export const hasNextAttribute = (root: string, context: string) => {
     }
 
     const comparison = context.substring(root.length);
-    console.log("Comparison", comparison);
     return comparison.includes(";");
 }
 
 export const extractKeyValue = (key: string, config: string, isFloat: boolean = false): number | null => {
     const context = config.substring(config.indexOf(key));
-    console.log("Context", context);
     let findValue = "";
     if (hasNextAttribute(key, context)) {
-        console.log("Key", key);
         findValue = context.substring(key.length, key.length + context.substring(key.length).indexOf(";"));
     } else {
         findValue = context.substring(key.length);
     }
-    console.log("findValue", findValue);
     return isFloat ? parseFloat(findValue) : parseInt(findValue);
 }
 
 export const importCrosshair = (config: string) => {
     let imported: ICrosshair = defaultCrosshair;
-    console.log("--------------------------------------------")
-    console.log(config);
+    if (config === "0") {
+        return defaultCrosshair;
+    }
     // show outlines: h;0 - turn off [default = on]
     if (config.includes("h;0")) {
         imported.config.outlines.outlinesEnabled = false;
@@ -105,7 +102,6 @@ export const importCrosshair = (config: string) => {
     if (config.includes("c;")) {
         const colour = extractKeyValue("c;", config);
         imported.config.colour = !!colour ? crosshairColour[colour] : imported.config.colour;
-        console.log("COLOUR", imported.config.colour);
     }
 
     // show center dot: d;1 - turn on [default = off]

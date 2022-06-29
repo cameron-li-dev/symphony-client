@@ -5,4 +5,9 @@ export interface ICrosshair {
     config: ICrosshairConfig;
 }
 
+export interface ICrosshairImport {
+    title: string;
+    config: string;
+}
+
 export default ICrosshair;
