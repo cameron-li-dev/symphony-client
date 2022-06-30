@@ -1,0 +1,18 @@
+.crosshair-dot-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+
+.crosshair-dot {
+  z-index: 1000;
+  position: absolute;
+}
+
+.crosshair-dot-outline {
+  position: absolute;
+  z-index: 1;
+}

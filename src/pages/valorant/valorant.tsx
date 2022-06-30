@@ -7,17 +7,19 @@ import {importCrosshair} from "../../components/crosshair-card/crosshair-service
 
 export const Valorant = () => {
     const crosshairs: ICrosshairImport[] = JSON.parse(JSON.stringify(crosshairData));
-    console.log("Crosshairs >", crosshairs);
 
     const crosshairCards: any[] = [];
-    for (let crosshair of crosshairs) {
-        console.log("Config >>", crosshair.config);
+    crosshairs.forEach((crosshair, index) => {
         let imported = importCrosshair(crosshair.config);
+        imported = {
+            ...imported,
+            title: crosshair.title
+        };
         console.log(imported);
         crosshairCards.push(
-            <CrosshairCard key={ "crosshair-card-" + crosshair.title } crosshair={ imported }/>
+            <CrosshairCard key={ "crosshair-card-" + crosshair.title + index } crosshair={ imported }/>
         )
-    }
+    })
 
     return (
         <div className="valorant-container">

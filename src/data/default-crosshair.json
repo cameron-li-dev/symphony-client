@@ -1,0 +1,55 @@
+{
+  "title": "string",
+  "config": {
+    "colour": "White",
+    "outlines": {
+      "outlinesEnabled": true,
+      "outline": {
+      "outlineOpacity": 0.5,
+      "outlineThickness": 1
+      }
+    },
+    "overrideOffset": false,
+    "centerDot": {
+      "dotEnabled": false,
+      "dot": {
+        "centerDotOpacity": 1,
+        "centerDotThickness": 2
+      }
+    },
+    "innerLines": {
+      "linesEnabled": true,
+      "lines": {
+        "lineOpacity": 0.8,
+        "lineLength": 6,
+        "lineThickness": 2,
+        "lineOffset": 3,
+        "movementErrorEnabled": false,
+        "movementError": {
+          "multiplier": 1
+        },
+        "firingErrorEnabled": true,
+        "firingError": {
+          "multiplier": 1
+        }
+      }
+    },
+    "outerLines": {
+      "linesEnabled": true,
+      "lines": {
+        "lineOpacity": 0.35,
+        "lineLength": 2,
+        "lineThickness": 2,
+        "lineOffset": 10,
+        "movementErrorEnabled": true,
+        "movementError": {
+          "multiplier": 1
+        },
+        "firingErrorEnabled": true,
+        "firingError": {
+        "multiplier": 1
+        }
+      }
+    }
+  }
+}

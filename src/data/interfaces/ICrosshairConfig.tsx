@@ -1,12 +1,12 @@
 export enum crosshairColour {
-    "White",
-    "Green",
-    "Yellow Green",
-    "Green Yellow",
-    "Yellow",
-    "Cyan",
-    "Pink",
-    "Red"
+    "whitte",
+    "green",
+    "yellowgreen",
+    "greenyellow",
+    "yellow",
+    "cyan",
+    "pink",
+    "red"
 }
 
 export interface ICrosshairOutlines {

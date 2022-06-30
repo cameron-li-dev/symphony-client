@@ -2,5 +2,33 @@
   {
     "title": "Default",
     "config": "0"
+  },
+  {
+    "title": "Default",
+    "config": "0;P;c;1"
+  },
+  {
+    "title": "Random",
+    "config": "0;P;c;2;h;0;d;1;a;0.629;0t;3;0l;10;0o;8;0a;0.232;1t;10;1l;3;1o;22;1a;0.002"
+  },
+  {
+    "title": "test",
+    "config": "0;P;c;3;1a;0.424"
+  },
+  {
+    "title": "big diff",
+    "config": "0;P;c;4;t;2;o;0.862;d;1;z;6;a;0.619;0t;6;0o;9;0a;0.378;1o;6;1a;0.76"
+  },
+  {
+    "title": "funky",
+    "config": "0;P;c;5;t;3;o;0.842;0t;9;0l;11;0o;6;0a;0.896;1t;6;1l;10;1o;36;1a;0.134"
+  },
+  {
+    "title": "small dot",
+    "config": "0;P;d;1;f;0;0t;4;0l;1;0o;0;0a;1;0f;0;1b;0"
+  },
+  {
+    "title": "tester",
+    "config": "0;s;1;P;f;0;0t;10;0l;1;0o;2;0a;1;0f;0;1b;0"
   }
 ]

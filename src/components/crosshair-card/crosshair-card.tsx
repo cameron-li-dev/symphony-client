@@ -3,7 +3,6 @@ import ICrosshair from "../../data/interfaces/ICrosshair";
 import CrosshairLines from "./crosshair-lines/crosshair-lines";
 import CrosshairCenterDot from "./crosshair-main/crosshair-center-dot";
 import React from "react";
-
 const cardBackgroundColours = [
     "darkslateblue",
     "lightslategray",
@@ -28,7 +27,11 @@ export const CrosshairCard = (props: { crosshair: ICrosshair }) => {
     return (
         <div className="crosshair-card-container" style={{background: cardBackgroundColours[backgroundColour]}} onClick={() => toggleBackgroundColour()}>
             <div className="crosshair-card-content">
-                <CrosshairCenterDot centerDot={crosshair.config.centerDot}/>
+                {/*<div style={{position: "absolute", background: "red", height: "1px", width: "120px"}}>*/}
+                {/*</div>*/}
+                {/*<div style={{position: "absolute", background: "red", width: "1px", height: "120px"}}>*/}
+                {/*</div>*/}
+                <CrosshairCenterDot colour={crosshair.config.colour} outlinesConfig={crosshair.config.outlines} centerDot={crosshair.config.centerDot}/>
                 <CrosshairLines colour={crosshair.config.colour} outlinesConfig={crosshair.config.outlines} linesConfig={crosshair.config.innerLines}/>
                 <CrosshairLines colour={crosshair.config.colour} outlinesConfig={crosshair.config.outlines} linesConfig={crosshair.config.outerLines}/>
             </div>

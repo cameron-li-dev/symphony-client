@@ -1,5 +1,6 @@
 import "./crosshair-lines.scss";
 import {ICrosshairLines, ICrosshairOutlines} from "../../../data/interfaces/ICrosshairConfig";
+import {getOutlines} from "../crosshair-service";
 
 export const CrosshairLines = (props: { colour: string, outlinesConfig: ICrosshairOutlines, linesConfig: ICrosshairLines }) => {
     const { colour, outlinesConfig, linesConfig } = props;
@@ -8,42 +9,72 @@ export const CrosshairLines = (props: { colour: string, outlinesConfig: ICrossha
         opacity: linesConfig.lines.lineOpacity
     }
     const outlineStyle = getOutlines(outlinesConfig);
+    const outlineOffset = outlinesConfig.outlinesEnabled ? outlinesConfig.outline.outlineThickness : 0;
+    const firingErrorOffset = linesConfig.lines.firingErrorEnabled ? 4 : 0;
 
     if (linesConfig.linesEnabled) {
         return (
             <div>
-                <div className="crosshair-line" style={{
-                    // Top
-                    ...style,
-                    ...outlineStyle,
-                    width: linesConfig.lines.lineThickness + "px",
-                    height: linesConfig.lines.lineLength + "px",
-                    transform: `translate(-2px, -${linesConfig.lines.lineOffset + linesConfig.lines.lineLength + 2}px)`
-                }}/>
-                <div className="crosshair-line" style={{
-                    // Right
-                    ...style,
-                    ...outlineStyle,
-                    width: linesConfig.lines.lineLength + "px",
-                    height: linesConfig.lines.lineThickness + "px",
-                    transform: `translate(${linesConfig.lines.lineOffset + linesConfig.lines.lineThickness - 2}px, -2px)`
-                }}/>
-                <div className="crosshair-line" style={{
-                    // Bottom
-                    ...style,
-                    ...outlineStyle,
-                    width: linesConfig.lines.lineThickness + "px",
-                    height: linesConfig.lines.lineLength + "px",
-                    transform: `translate(-2px, ${linesConfig.lines.lineOffset + linesConfig.lines.lineThickness - 2}px)`
-                }}/>
-                <div className="crosshair-line" style={{
-                    // Left
-                    ...style,
-                    ...outlineStyle,
-                    width: linesConfig.lines.lineLength + "px",
-                    height: linesConfig.lines.lineThickness + "px",
-                    transform: `translate(-${linesConfig.lines.lineOffset + linesConfig.lines.lineLength + 2}px, -2px)`
-                }}/>
+                <div className="crosshair-lines">
+                    <div className="crosshair-line" style={{
+                        // Top
+                        ...style,
+                        width: linesConfig.lines.lineThickness + "px",
+                        height: linesConfig.lines.lineLength + "px",
+                        top: `-${firingErrorOffset + linesConfig.lines.lineOffset + linesConfig.lines.lineLength}px`
+                    }}/>
+                    <div className="crosshair-line" style={{
+                        // Right
+                        ...style,
+                        width: linesConfig.lines.lineLength + "px",
+                        height: linesConfig.lines.lineThickness + "px",
+                        right: `-${firingErrorOffset + linesConfig.lines.lineOffset + linesConfig.lines.lineLength}px`
+                    }}/>
+                    <div className="crosshair-line" style={{
+                        // Bottom
+                        ...style,
+                        width: linesConfig.lines.lineThickness + "px",
+                        height: linesConfig.lines.lineLength + "px",
+                        bottom: `-${firingErrorOffset + linesConfig.lines.lineOffset + linesConfig.lines.lineLength}px`
+                    }}/>
+                    <div className="crosshair-line" style={{
+                        // Left
+                        ...style,
+                        width: linesConfig.lines.lineLength + "px",
+                        height: linesConfig.lines.lineThickness + "px",
+                        left: `-${firingErrorOffset + linesConfig.lines.lineOffset + linesConfig.lines.lineLength}px`
+                    }}/>
+                </div>
+                <div className="crosshair-lines-outlines">
+                    <div className="crosshair-line-outline" style={{
+                        // Top
+                        ...outlineStyle,
+                        width: linesConfig.lines.lineThickness + "px",
+                        height: linesConfig.lines.lineLength + "px",
+                        top: `-${firingErrorOffset + linesConfig.lines.lineOffset + linesConfig.lines.lineLength + outlineOffset}px`
+                    }}/>
+                    <div className="crosshair-line-outline" style={{
+                        // Right
+                        ...outlineStyle,
+                        width: linesConfig.lines.lineLength + "px",
+                        height: linesConfig.lines.lineThickness + "px",
+                        right: `-${firingErrorOffset + linesConfig.lines.lineOffset + linesConfig.lines.lineLength + outlineOffset}px`
+                    }}/>
+                    <div className="crosshair-line-outline" style={{
+                        // Bottom
+                        ...outlineStyle,
+                        width: linesConfig.lines.lineThickness + "px",
+                        height: linesConfig.lines.lineLength + "px",
+                        bottom: `-${firingErrorOffset + linesConfig.lines.lineOffset + linesConfig.lines.lineLength + outlineOffset}px`
+                    }}/>
+                    <div className="crosshair-line-outline" style={{
+                        // Left
+                        ...outlineStyle,
+                        width: linesConfig.lines.lineLength + "px",
+                        height: linesConfig.lines.lineThickness + "px",
+                        left: `-${firingErrorOffset + linesConfig.lines.lineOffset + linesConfig.lines.lineLength + outlineOffset}px`
+                    }}/>
+                </div>
             </div>
         )
     }
@@ -51,17 +82,6 @@ export const CrosshairLines = (props: { colour: string, outlinesConfig: ICrossha
     return (
         <div></div>
     )
-}
-
-const getOutlines = (outlinesConfig: ICrosshairOutlines) => {
-    if (outlinesConfig.outlinesEnabled) {
-        if (outlinesConfig.outline.outlineOpacity > 0 && outlinesConfig.outline.outlineThickness > 0) {
-            return {
-                border: `${ outlinesConfig.outline.outlineThickness }px solid rgba(0, 0, 0, ${ outlinesConfig.outline.outlineOpacity })`
-            }
-        }
-    }
-    return {};
 }
 
 export default CrosshairLines;
