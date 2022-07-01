@@ -1,8 +1,8 @@
 @import "src/styles/globals.scss";
 
 .crosshair-card-container {
-  margin-left: 18px;
   margin-right: 18px;
+  margin-bottom: 18px;
   border-radius: 8px;
   transition-duration: 0.5s;
 }
@@ -16,8 +16,9 @@
   align-items: center;
   justify-content: center;
   aspect-ratio: 1;
+  width: 128px;
 
   @include breakpoint($l) {
-    width: 200px;
+    width: 196px;
   }
 }

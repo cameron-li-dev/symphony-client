@@ -27,10 +27,6 @@ export const CrosshairCard = (props: { crosshair: ICrosshair }) => {
     return (
         <div className="crosshair-card-container" style={{background: cardBackgroundColours[backgroundColour]}} onClick={() => toggleBackgroundColour()}>
             <div className="crosshair-card-content">
-                {/*<div style={{position: "absolute", background: "red", height: "1px", width: "120px"}}>*/}
-                {/*</div>*/}
-                {/*<div style={{position: "absolute", background: "red", width: "1px", height: "120px"}}>*/}
-                {/*</div>*/}
                 <CrosshairCenterDot colour={crosshair.config.colour} outlinesConfig={crosshair.config.outlines} centerDot={crosshair.config.centerDot}/>
                 <CrosshairLines colour={crosshair.config.colour} outlinesConfig={crosshair.config.outlines} linesConfig={crosshair.config.innerLines}/>
                 <CrosshairLines colour={crosshair.config.colour} outlinesConfig={crosshair.config.outlines} linesConfig={crosshair.config.outerLines}/>

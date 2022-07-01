@@ -16,7 +16,7 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/path-find" element={<PathFind/>}/>
-                <Route path="/valorant" element={<Valorant/>}/>
+                <Route path="/valorant/*" element={<Valorant/>}/>
                 <Route path="/components" element={<Components/>}/>
                 <Route path="/blog" element={<Blog/>}/>
                 <Route path="/skills" element={<Skills/>}/>
