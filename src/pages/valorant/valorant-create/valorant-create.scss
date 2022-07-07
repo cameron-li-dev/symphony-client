@@ -7,3 +7,32 @@
   display: flex;
   margin-left: 18px;
 }
+
+.valorant-create-content--settings {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.valorant-create-content--settings-lines {
+  display: flex;
+  flex-direction: column;
+}
+
+.valorant-create-content--settings-toggle--buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.valorant-create-content--settings-slider-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.valorant-create-content--settings-slider--title {
+  width: 200px;
+}
+
+.valorant-create-content--settings-slider {
+  flex: 1;
+}

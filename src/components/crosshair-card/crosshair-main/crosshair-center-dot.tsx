@@ -9,7 +9,6 @@ export const CrosshairCenterDot = (props: { colour: string, outlinesConfig: ICro
         height: centerDot.dot.centerDotThickness
     }
     const outlineStyle = getOutlines(outlinesConfig);
-    const outlineOffset = outlinesConfig.outlinesEnabled ? outlinesConfig.outline.outlineThickness : 0;
 
     if (!centerDot.dotEnabled) {
         return (
@@ -27,9 +26,7 @@ export const CrosshairCenterDot = (props: { colour: string, outlinesConfig: ICro
             </div>
             <div className="crosshair-dot-outline" style={{
                 ...style,
-                ...outlineStyle,
-                top: `-${outlineOffset}`,
-                right: `-${outlineOffset}`
+                ...outlineStyle
             }}></div>
         </div>
     )
