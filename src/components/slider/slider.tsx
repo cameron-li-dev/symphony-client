@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { styled, alpha, Box } from '@mui/system';
+import { styled, alpha } from '@mui/system';
 import SliderUnstyled, { sliderUnstyledClasses } from '@mui/base/SliderUnstyled';
-import {useCallback} from "react";
 
 const StyledSlider = styled(SliderUnstyled)(
     ({ theme }) => `

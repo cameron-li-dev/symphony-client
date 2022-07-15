@@ -57,7 +57,7 @@ export const importCrosshair = (config: string) => {
     // colour - default none
     if (config.includes(";c;")) {
         const colour = extractKeyValue(";c;", config);
-        imported.config.colour = !!colour ? crosshairColour[colour] : imported.config.colour;
+        imported.config.colour = (!!colour ? crosshairColour[colour] : imported.config.colour) as crosshairColour;
     }
 
     // show center dot: d;1 - turn on [default = off]

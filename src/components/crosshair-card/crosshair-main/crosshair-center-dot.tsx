@@ -1,8 +1,8 @@
-import {ICrosshairCenterDot, ICrosshairOutlines} from "../../../data/interfaces/ICrosshairConfig";
+import {crosshairColour, ICrosshairCenterDot, ICrosshairOutlines} from "../../../data/interfaces/ICrosshairConfig";
 import {getOutlines} from "../crosshair-service";
 import "./crosshair-center-dot.scss"
 
-export const CrosshairCenterDot = (props: { colour: string, outlinesConfig: ICrosshairOutlines, centerDot: ICrosshairCenterDot }) => {
+export const CrosshairCenterDot = (props: { colour: crosshairColour, outlinesConfig: ICrosshairOutlines, centerDot: ICrosshairCenterDot }) => {
     const { colour, outlinesConfig, centerDot } = props;
     const style = {
         width: centerDot.dot.centerDotThickness,

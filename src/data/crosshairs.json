@@ -30,5 +30,9 @@
   {
     "title": "tester",
     "config": "0;s;1;P;f;0;0t;10;0l;1;0o;2;0a;1;0f;0;1b;0"
+  },
+  {
+    "title": "lol",
+    "config": "0;P;t;6;o;1"
   }
 ]

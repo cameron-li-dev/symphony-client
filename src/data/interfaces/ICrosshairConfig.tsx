@@ -1,5 +1,5 @@
 export enum crosshairColour {
-    "whitte",
+    "white",
     "green",
     "yellowgreen",
     "greenyellow",
@@ -44,7 +44,7 @@ export interface ICrosshairLines {
 }
 
 export interface ICrosshairConfig {
-    colour: string;
+    colour: crosshairColour;
     outlines: ICrosshairOutlines;
     overrideOffset: boolean;
     centerDot: ICrosshairCenterDot;

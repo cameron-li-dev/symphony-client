@@ -1,0 +1,32 @@
+.skills-container {
+  padding: 18px;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+}
+
+.skills-web-development {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.skills-web-development-title-container {
+  display: flex;
+  position: relative;
+}
+
+.skills-web-development-title-content {
+  color: black;
+  font-size: 128px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  mix-blend-mode: lighten;
+  background: white;
+}
+
+.skills-web-development-title-underlay {
+  width: 99%;
+  height: 99%;
+  position: absolute;
+}
