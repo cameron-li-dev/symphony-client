@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {ICrosshairOutlines} from "../../../data/interfaces/ICrosshairConfig";
-import "./crosshair-create-outlines.scss";
+import "../crosshair-create.scss";
 import {Slider} from "../../slider/slider";
 
 const CrosshairCreateOutlines = (props: { outlines: ICrosshairOutlines, updateOutlines: (outlines: ICrosshairOutlines) => void}) => {
@@ -26,32 +26,30 @@ const CrosshairCreateOutlines = (props: { outlines: ICrosshairOutlines, updateOu
     }, [props, outlines]);
 
     return (
-        <div className="valorant-create-content--settings-main">
-            <div className="valorant-create-content--settings-toggle">
-                <div className="crosshair-create-row">
-                    <div className="crosshair-create-title">
-                        Outlines:
-                    </div>
-                    <div className="crosshair-create-buttons">
-                        <div className="crosshair-create-button" onClick={() => setOutlinesEnabled(true)}>On</div>
-                        <div className="crosshair-create-button" onClick={() => setOutlinesEnabled(false)}>Off</div>
-                    </div>
+        <div className="content-create-section">
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    Outlines:
                 </div>
-                <div className="crosshair-create-row">
-                    <div className="crosshair-create-title">
-                        Outline Opacity:
-                    </div>
-                    <div className="crosshair-create-slider">
-                        <Slider min={0} max={1} step={0.01} defaultValue={outlineOpacity} disabled={!outlinesEnabled} updateValue={setOutlineOpacity}/>
-                    </div>
+                <div className="crosshair-create-buttons">
+                    <div className="crosshair-create-button" onClick={() => setOutlinesEnabled(true)}>On</div>
+                    <div className="crosshair-create-button" onClick={() => setOutlinesEnabled(false)}>Off</div>
                 </div>
-                <div className="crosshair-create-row">
-                    <div className="crosshair-create-title">
-                        Outline Thickness:
-                    </div>
-                    <div className="crosshair-create-slider">
-                        <Slider min={0} max={10} step={1} defaultValue={outlineThickness} disabled={!outlinesEnabled} updateValue={setOutlineThickness}/>
-                    </div>
+            </div>
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    Outline Opacity:
+                </div>
+                <div className="crosshair-create-slider">
+                    <Slider min={0} max={1} step={0.01} defaultValue={outlineOpacity} disabled={!outlinesEnabled} updateValue={setOutlineOpacity}/>
+                </div>
+            </div>
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    Outline Thickness:
+                </div>
+                <div className="crosshair-create-slider">
+                    <Slider min={0} max={10} step={1} defaultValue={outlineThickness} disabled={!outlinesEnabled} updateValue={setOutlineThickness}/>
                 </div>
             </div>
         </div>

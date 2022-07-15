@@ -1,28 +1,34 @@
 .crosshair-create-container {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  align-items: center;
 }
 
-.valorant-create-content--settings-lines {
+.crosshair-create-main {
+  width: 100%;
+}
+
+.crosshair-create-row {
   display: flex;
-  flex-direction: column;
 }
 
-.valorant-create-content--settings-toggle--buttons {
+.crosshair-create-title {
+  align-self: center;
+  width: 300px;
+}
+
+.crosshair-create-buttons {
   display: flex;
-  justify-content: space-between;
 }
 
-.valorant-create-content--settings-slider-container {
-  display: flex;
-  justify-content: space-between;
+.crosshair-create-button {
+  font-weight: 700;
+  font-size: 24px;
+  padding: 4px 48px;
+  background: lightgray;
+  margin-left: 12px;
 }
 
-.valorant-create-content--settings-slider--title {
-  width: 200px;
-}
-
-.valorant-create-content--settings-slider {
-  flex: 1;
+.crosshair-create-slider, .crosshair-create-drop-down-list {
+  width: 80%
 }

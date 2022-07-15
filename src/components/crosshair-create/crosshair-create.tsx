@@ -41,18 +41,31 @@ const CrosshairCreate = (props: { crosshair: ICrosshair, updateCrosshair: (cross
 
     return (
         <div className="crosshair-create-container">
-            <div className={"general"}>
-                <div>
-                    Colour
-                </div>
-                <CrosshairCreateOutlines outlines={outlines} updateOutlines={setOutlines}/>
-                <CrosshairCreateCenterDot centerDot={centerDot} updateCenterDot={setCenterDot}/>
-                <div>
-                    Offset
+            <div>
+                <div className="crosshair-create-row">
+                    <div className="crosshair-create-title">
+                        Colour
+                    </div>
+                    <div className="crosshair-create-drop-down-list">
+                        {colour}
+                    </div>
                 </div>
             </div>
-            {/*<CrosshairCreateLines lines={innerLines} updateLines={setInnerLines}/>*/}
-            {/*<CrosshairCreateLines lines={outerLines} updateLines={setOuterLines}/>*/}
+
+            <CrosshairCreateOutlines outlines={outlines} updateOutlines={setOutlines}/>
+            <CrosshairCreateCenterDot centerDot={centerDot} updateCenterDot={setCenterDot}/>
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    Offset:
+                </div>
+                <div className="crosshair-create-buttons">
+                    <div className="crosshair-create-button" onClick={() => setOverrideOffset(true)}>On</div>
+                    <div className="crosshair-create-button" onClick={() => setOverrideOffset(false)}>Off</div>
+                </div>
+            </div>
+            <hr/>
+            <CrosshairCreateLines isInner={true} lines={innerLines} updateLines={setInnerLines}/>
+            <CrosshairCreateLines isInner={false} lines={outerLines} updateLines={setOuterLines}/>
         </div>
     )
 }

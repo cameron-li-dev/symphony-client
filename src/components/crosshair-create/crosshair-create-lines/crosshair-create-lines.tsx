@@ -1,7 +1,9 @@
 import React, {useEffect} from "react";
 import {ICrosshairLines} from "../../../data/interfaces/ICrosshairConfig";
+import {Slider} from "../../slider/slider";
 
-const CrosshairCreateLines = (props: { lines: ICrosshairLines, updateLines: (lines: ICrosshairLines) => void }) => {
+const CrosshairCreateLines = (props: { isInner: boolean, lines: ICrosshairLines, updateLines: (lines: ICrosshairLines) => void }) => {
+    const { isInner, updateLines } = props;
     const [lines, setLines] = React.useState(props.lines);
     const [linesEnabled, setLinesEnabled] = React.useState(lines.linesEnabled);
     const [lineOpacity, setLineOpacity] = React.useState(lines.lines.lineOpacity);
@@ -33,19 +35,89 @@ const CrosshairCreateLines = (props: { lines: ICrosshairLines, updateLines: (lin
                 }
             }
         })
-    }, [linesEnabled, lineOpacity, lineLength, lineThickness, lineOpacity, movementError, movementErrorMultiplier, firingError, firingErrorMultiplier]);
+    }, [linesEnabled, lineOpacity, lineLength, lineThickness, lineOffset, movementError, movementErrorMultiplier, firingError, firingErrorMultiplier]);
 
     useEffect(() => {
-        props.updateLines(lines);
-    }, [props, lines]);
+        updateLines(lines);
+    }, [lines]);
+
+    const linePrefix: string = isInner ? "Inner Lines" : "Outer Lines";
 
     return (
-        <div className="valorant-create-content--settings-lines">
-            <div className="valorant-create-content--settings-toggle">
-                <div className="valorant-create-content--settings-toggle--title">Show Inner Lines</div>
-                <div className="valorant-create-content--settings-toggle--buttons">
-                    <div onClick={() => setLinesEnabled(true)}>Yes</div>
-                    <div onClick={() => setLinesEnabled(false)}>No</div>
+        <div className="content-create-section">
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    {linePrefix}:
+                </div>
+                <div className="crosshair-create-buttons">
+                    <div className="crosshair-create-button" onClick={() => setLinesEnabled(true)}>On</div>
+                    <div className="crosshair-create-button" onClick={() => setLinesEnabled(false)}>Off</div>
+                </div>
+            </div>
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    {linePrefix} Opacity:
+                </div>
+                <div className="crosshair-create-slider">
+                    <Slider min={0} max={1} step={0.01} defaultValue={lineOpacity} disabled={!linesEnabled} updateValue={setLineOpacity}/>
+                </div>
+            </div>
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    {linePrefix} Length:
+                </div>
+                <div className="crosshair-create-slider">
+                    <Slider min={0} max={6} step={1} defaultValue={lineLength} disabled={!linesEnabled} updateValue={setLineLength}/>
+                </div>
+            </div>
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    {linePrefix} Thickness:
+                </div>
+                <div className="crosshair-create-slider">
+                    <Slider min={0} max={6} step={1} defaultValue={lineThickness} disabled={!linesEnabled} updateValue={setLineThickness}/>
+                </div>
+            </div>
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    {linePrefix} Offset:
+                </div>
+                <div className="crosshair-create-slider">
+                    <Slider min={0} max={10} step={1} defaultValue={lineOffset} disabled={!linesEnabled} updateValue={setLineOffset}/>
+                </div>
+            </div>
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    {linePrefix} Movement Error:
+                </div>
+                <div className="crosshair-create-buttons">
+                    <div className="crosshair-create-button" onClick={() => setMovementError(true)}>On</div>
+                    <div className="crosshair-create-button" onClick={() => setMovementError(false)}>Off</div>
+                </div>
+            </div>
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    {linePrefix} Movement Error Multiplier:
+                </div>
+                <div className="crosshair-create-slider">
+                    <Slider min={0} max={5} step={0.01} defaultValue={movementErrorMultiplier} disabled={!linesEnabled && !movementError} updateValue={setMovementErrorMultiplier}/>
+                </div>
+            </div>
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    {linePrefix} Firing Error:
+                </div>
+                <div className="crosshair-create-buttons">
+                    <div className="crosshair-create-button" onClick={() => setFiringError(true)}>On</div>
+                    <div className="crosshair-create-button" onClick={() => setFiringError(false)}>Off</div>
+                </div>
+            </div>
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    {linePrefix} Firing Error Multiplier:
+                </div>
+                <div className="crosshair-create-slider">
+                    <Slider min={0} max={5} step={0.01} defaultValue={firingErrorMultiplier} disabled={!linesEnabled && !firingError} updateValue={setFiringErrorMultiplier}/>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import {ICrosshairCenterDot} from "../../../data/interfaces/ICrosshairConfig";
 import {Slider} from "../../slider/slider";
+import "../crosshair-create.scss";
 
 const CrosshairCreateCenterDot = (props: { centerDot: ICrosshairCenterDot, updateCenterDot: (c: ICrosshairCenterDot) => void }) => {
     const [centerDot, setCenterDot] = React.useState(props.centerDot);
@@ -25,28 +26,30 @@ const CrosshairCreateCenterDot = (props: { centerDot: ICrosshairCenterDot, updat
     }, [props, centerDot])
 
     return (
-        <div>
-            <div className="valorant-create-content--settings-toggle">
-                <div className="valorant-create-content--settings-toggle--title">Show Dot</div>
-                <div className="valorant-create-content--settings-toggle--buttons">
-                    <div onClick={() => setCenterDotEnabled(true)}>Yes</div>
-                    <div onClick={() => setCenterDotEnabled(false)}>No</div>
+        <div className="content-create-section">
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    Center Dot:
+                </div>
+                <div className="crosshair-create-buttons">
+                    <div className="crosshair-create-button" onClick={() => setCenterDotEnabled(true)}>On</div>
+                    <div className="crosshair-create-button" onClick={() => setCenterDotEnabled(false)}>Off</div>
                 </div>
             </div>
-            <div className="valorant-create-content--settings-slider-container">
-                <div className="valorant-create-content--settings-slider--title">
-                    Opacity
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    Center Dot Opacity:
                 </div>
-                <div className="valorant-create-content--settings-slider">
-                    <Slider min={0} max={1} step={0.01} defaultValue={centerDotOpacity} disabled={!centerDot.dotEnabled} updateValue={setCenterDotOpacity}/>
+                <div className="crosshair-create-slider">
+                    <Slider min={0} max={1} step={0.01} defaultValue={centerDotOpacity} disabled={!centerDotEnabled} updateValue={setCenterDotOpacity}/>
                 </div>
             </div>
-            <div className="valorant-create-content--settings-slider-container">
-                <div className="valorant-create-content--settings-slider--title">
-                    Thickness
+            <div className="crosshair-create-row">
+                <div className="crosshair-create-title">
+                    Center Dot Thickness:
                 </div>
-                <div className="valorant-create-content--settings-slider">
-                    <Slider min={0} max={10} step={1} defaultValue={centerDotThickness} disabled={!centerDot.dotEnabled} updateValue={setCenterDotThickness}/>
+                <div className="crosshair-create-slider">
+                    <Slider min={0} max={10} step={1} defaultValue={centerDotThickness} disabled={!centerDotEnabled} updateValue={setCenterDotThickness}/>
                 </div>
             </div>
         </div>
