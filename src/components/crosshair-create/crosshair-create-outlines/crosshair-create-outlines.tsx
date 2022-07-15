@@ -26,7 +26,7 @@ const CrosshairCreateOutlines = (props: { outlines: ICrosshairOutlines, updateOu
     }, [props, outlines]);
 
     return (
-        <div className="content-create-section">
+        <div className="crosshair-create-section">
             <div className="crosshair-create-row">
                 <div className="crosshair-create-title">
                     Outlines:

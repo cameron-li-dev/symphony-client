@@ -103,9 +103,7 @@ export const importCrosshair = (config: string) => {
         if (config.includes(";0o;")) {
             const lineOffset = extractKeyValue(";0o;", config);
             console.log("line offset", lineOffset);
-            console.log(!!lineOffset);
             imported.config.innerLines.lines.lineOffset = lineOffset !== null ? lineOffset : imported.config.innerLines.lines.lineOffset
-            console.log("line offset 2", imported.config.innerLines.lines.lineOffset)
         }
 
         // inner line movement error: 0m;1 - turn on [default = off]

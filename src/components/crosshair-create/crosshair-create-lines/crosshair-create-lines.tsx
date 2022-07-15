@@ -44,7 +44,7 @@ const CrosshairCreateLines = (props: { isInner: boolean, lines: ICrosshairLines,
     const linePrefix: string = isInner ? "Inner Lines" : "Outer Lines";
 
     return (
-        <div className="content-create-section">
+        <div className="crosshair-create-section">
             <div className="crosshair-create-row">
                 <div className="crosshair-create-title">
                     {linePrefix}:
