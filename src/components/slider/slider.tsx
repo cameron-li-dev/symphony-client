@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/system';
 import SliderUnstyled, { sliderUnstyledClasses } from '@mui/base/SliderUnstyled';
+import {useEffect} from "react";
 
 const StyledSlider = styled(SliderUnstyled)(
     ({ theme }) => `
@@ -77,12 +78,15 @@ export const Slider = (props: { min: number, max: number, step?: number, default
     const {min, max, step, defaultValue, disabled, updateValue} = props;
     const [value, setValue] = React.useState<number>(defaultValue);
 
-    const handleChange = (event: Event, newValue: number | number[]) => {
+    const handleChange = (e: Event, newValue: number | number[]) => {
         if (typeof newValue === 'number') {
             setValue(newValue);
-            updateValue(newValue);
         }
     };
+
+    useEffect(() => {
+        updateValue(value);
+    }, [updateValue, value]);
 
     if (disabled) {
         return (
@@ -99,7 +103,10 @@ export const Slider = (props: { min: number, max: number, step?: number, default
         )
     }
     return (
-        <div>
+        <div style={{display: "flex"}}>
+            <div style={{width: "50px"}}>
+                {value}
+            </div>
             <StyledSlider
                 step={step}
                 marks={true}

@@ -3,10 +3,25 @@
   flex-direction: column;
   align-items: center;
   width: 600px;
+  padding: 0 12px;
+  margin-bottom: 12px;
+}
+
+.crosshair-create-section-title {
+  align-self: start;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
 }
 
 .crosshair-create-main, .crosshair-create-section {
   width: 100%;
+}
+
+.crosshair-create-section {
+  background: #dedede;
+  border-radius: 4px;
+  padding: 12px;
 }
 
 .crosshair-create-row {
@@ -30,6 +45,8 @@
   padding: 4px 48px;
   background: lightgray;
   margin-left: 12px;
+  transition-duration: 0.1s;
+  cursor: pointer;
 }
 
 .crosshair-create-slider, .crosshair-create-drop-down-list {
@@ -38,16 +55,25 @@
 
 .crosshair-create-drop-down-list {
   position: relative;
+  border-radius: 2px;
+  margin-bottom: 8px;
 }
 
 .crosshair-create-drop-down-button {
   width: 100%;
+  background: white;
   text-align: center;
+  border: 1px solid #757575;
+  border-radius: 2px;
 }
 
 .crosshair-create-colour-modal {
 }
 
 .crosshair-create-colour-select {
+  width: 100%;
+  background: white;
   text-align: center;
+  border: 1px solid #9a9a9a;
+  border-radius: 2px;
 }

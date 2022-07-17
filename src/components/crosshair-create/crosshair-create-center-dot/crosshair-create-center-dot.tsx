@@ -26,14 +26,14 @@ const CrosshairCreateCenterDot = (props: { centerDot: ICrosshairCenterDot, updat
     }, [props, centerDot])
 
     return (
-        <div className="crosshair-create-section">
+        <>
             <div className="crosshair-create-row">
                 <div className="crosshair-create-title">
                     Center Dot:
                 </div>
                 <div className="crosshair-create-buttons">
-                    <div className="crosshair-create-button" onClick={() => setCenterDotEnabled(true)}>On</div>
-                    <div className="crosshair-create-button" onClick={() => setCenterDotEnabled(false)}>Off</div>
+                    <div className="crosshair-create-button" style={{background: centerDotEnabled ? "darkgray" : "lightgray"}} onClick={() => setCenterDotEnabled(true)}>On</div>
+                    <div className="crosshair-create-button" style={{background: !centerDotEnabled ? "darkgray" : "lightgray"}}  onClick={() => setCenterDotEnabled(false)}>Off</div>
                 </div>
             </div>
             <div className="crosshair-create-row">
@@ -52,7 +52,7 @@ const CrosshairCreateCenterDot = (props: { centerDot: ICrosshairCenterDot, updat
                     <Slider min={0} max={10} step={1} defaultValue={centerDotThickness} disabled={!centerDotEnabled} updateValue={setCenterDotThickness}/>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

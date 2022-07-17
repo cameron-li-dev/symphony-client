@@ -26,14 +26,14 @@ const CrosshairCreateOutlines = (props: { outlines: ICrosshairOutlines, updateOu
     }, [props, outlines]);
 
     return (
-        <div className="crosshair-create-section">
+        <>
             <div className="crosshair-create-row">
                 <div className="crosshair-create-title">
                     Outlines:
                 </div>
                 <div className="crosshair-create-buttons">
-                    <div className="crosshair-create-button" onClick={() => setOutlinesEnabled(true)}>On</div>
-                    <div className="crosshair-create-button" onClick={() => setOutlinesEnabled(false)}>Off</div>
+                    <div className="crosshair-create-button" style={{background: outlinesEnabled ? "darkgray" : "lightgray"}}  onClick={() => setOutlinesEnabled(true)}>On</div>
+                    <div className="crosshair-create-button" style={{background: !outlinesEnabled ? "darkgray" : "lightgray"}}  onClick={() => setOutlinesEnabled(false)}>Off</div>
                 </div>
             </div>
             <div className="crosshair-create-row">
@@ -52,7 +52,7 @@ const CrosshairCreateOutlines = (props: { outlines: ICrosshairOutlines, updateOu
                     <Slider min={0} max={10} step={1} defaultValue={outlineThickness} disabled={!outlinesEnabled} updateValue={setOutlineThickness}/>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 

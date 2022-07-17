@@ -16,6 +16,7 @@ const CrosshairCreateLines = (props: { isInner: boolean, lines: ICrosshairLines,
     const [firingErrorMultiplier, setFiringErrorMultiplier] = React.useState(lines.lines.firingError.multiplier);
 
     useEffect(() => {
+        console.log("changed");
         setLines(l => {
             return {
                 linesEnabled: linesEnabled,
@@ -39,19 +40,19 @@ const CrosshairCreateLines = (props: { isInner: boolean, lines: ICrosshairLines,
 
     useEffect(() => {
         updateLines(lines);
-    }, [lines]);
+    }, [lines, updateLines]);
 
     const linePrefix: string = isInner ? "Inner Lines" : "Outer Lines";
 
     return (
-        <div className="crosshair-create-section">
+        <>
             <div className="crosshair-create-row">
                 <div className="crosshair-create-title">
                     {linePrefix}:
                 </div>
                 <div className="crosshair-create-buttons">
-                    <div className="crosshair-create-button" onClick={() => setLinesEnabled(true)}>On</div>
-                    <div className="crosshair-create-button" onClick={() => setLinesEnabled(false)}>Off</div>
+                    <div className="crosshair-create-button" style={{background: linesEnabled ? "darkgray" : "lightgray"}}  onClick={() => setLinesEnabled(true)}>On</div>
+                    <div className="crosshair-create-button" style={{background: !linesEnabled ? "darkgray" : "lightgray"}}  onClick={() => setLinesEnabled(false)}>Off</div>
                 </div>
             </div>
             <div className="crosshair-create-row">
@@ -91,8 +92,8 @@ const CrosshairCreateLines = (props: { isInner: boolean, lines: ICrosshairLines,
                     {linePrefix} Movement Error:
                 </div>
                 <div className="crosshair-create-buttons">
-                    <div className="crosshair-create-button" onClick={() => setMovementError(true)}>On</div>
-                    <div className="crosshair-create-button" onClick={() => setMovementError(false)}>Off</div>
+                    <div className="crosshair-create-button" style={{background: movementError ? "darkgray" : "lightgray"}}  onClick={() => setMovementError(true)}>On</div>
+                    <div className="crosshair-create-button" style={{background: !movementError ? "darkgray" : "lightgray"}}  onClick={() => setMovementError(false)}>Off</div>
                 </div>
             </div>
             <div className="crosshair-create-row">
@@ -108,8 +109,8 @@ const CrosshairCreateLines = (props: { isInner: boolean, lines: ICrosshairLines,
                     {linePrefix} Firing Error:
                 </div>
                 <div className="crosshair-create-buttons">
-                    <div className="crosshair-create-button" onClick={() => setFiringError(true)}>On</div>
-                    <div className="crosshair-create-button" onClick={() => setFiringError(false)}>Off</div>
+                    <div className="crosshair-create-button" style={{background: firingError ? "darkgray" : "lightgray"}}  onClick={() => setFiringError(true)}>On</div>
+                    <div className="crosshair-create-button" style={{background: !firingError ? "darkgray" : "lightgray"}}  onClick={() => setFiringError(false)}>Off</div>
                 </div>
             </div>
             <div className="crosshair-create-row">
@@ -120,7 +121,7 @@ const CrosshairCreateLines = (props: { isInner: boolean, lines: ICrosshairLines,
                     <Slider min={0} max={5} step={0.01} defaultValue={firingErrorMultiplier} disabled={!linesEnabled && !firingError} updateValue={setFiringErrorMultiplier}/>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

@@ -1,7 +1,7 @@
 {
   "title": "string",
   "config": {
-    "colour": "White",
+    "colour": "white",
     "outlines": {
       "outlinesEnabled": true,
       "outline": {
