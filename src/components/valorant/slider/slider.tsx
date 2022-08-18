@@ -84,9 +84,9 @@ export const Slider = (props: { min: number, max: number, step?: number, default
         }
     };
 
-    useEffect(() => {
+    const commitChange = () => {
         updateValue(value);
-    }, [updateValue, value]);
+    }
 
     if (disabled) {
         return (
@@ -113,7 +113,8 @@ export const Slider = (props: { min: number, max: number, step?: number, default
                 min={min}
                 max={max}
                 value={value}
-                onChange={(e, newValue) => handleChange(e, newValue)}/>
+                onChange={(e, newValue) => handleChange(e, newValue)}
+                onChangeCommitted={() => commitChange()}/>
         </div>
     );
 }

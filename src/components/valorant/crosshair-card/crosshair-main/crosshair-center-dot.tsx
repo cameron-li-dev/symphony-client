@@ -1,4 +1,4 @@
-import {crosshairColour, ICrosshairCenterDot, ICrosshairOutlines} from "../../../data/interfaces/ICrosshairConfig";
+import {crosshairColour, ICrosshairCenterDot, ICrosshairOutlines} from "../../../../data/interfaces/ICrosshairConfig";
 import {getOutlines} from "../crosshair-service";
 import "./crosshair-center-dot.scss"
 

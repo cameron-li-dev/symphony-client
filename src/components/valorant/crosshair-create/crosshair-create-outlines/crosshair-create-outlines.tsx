@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {ICrosshairOutlines} from "../../../data/interfaces/ICrosshairConfig";
+import {ICrosshairOutlines} from "../../../../data/interfaces/ICrosshairConfig";
 import "../crosshair-create.scss";
 import {Slider} from "../../slider/slider";
 

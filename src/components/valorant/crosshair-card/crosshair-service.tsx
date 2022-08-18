@@ -1,6 +1,6 @@
-import ICrosshair from "../../data/interfaces/ICrosshair";
-import {crosshairColour, ICrosshairOutlines} from "../../data/interfaces/ICrosshairConfig";
-import defaultCrosshair from "../../data/default-crosshair.json";
+import ICrosshair from "../../../data/interfaces/ICrosshair";
+import {crosshairColour, ICrosshairOutlines} from "../../../data/interfaces/ICrosshairConfig";
+import defaultCrosshair from "../../../data/default-crosshair.json";
 
 export const getOutlines = (outlinesConfig: ICrosshairOutlines) => {
     if (outlinesConfig.outlinesEnabled) {

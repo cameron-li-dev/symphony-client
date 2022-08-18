@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
-import ICrosshair from "../../data/interfaces/ICrosshair";
+import ICrosshair from "../../../data/interfaces/ICrosshair";
 import {
     crosshairColour,
     ICrosshairCenterDot,
     ICrosshairLines,
     ICrosshairOutlines
-} from "../../data/interfaces/ICrosshairConfig";
+} from "../../../data/interfaces/ICrosshairConfig";
 import CrosshairCreateCenterDot from "./crosshair-create-center-dot/crosshair-create-center-dot";
 import CrosshairCreateLines from "./crosshair-create-lines/crosshair-create-lines";
 import CrosshairCreateOutlines from "./crosshair-create-outlines/crosshair-create-outlines";
@@ -49,7 +49,7 @@ const CrosshairCreate = (props: { crosshair: ICrosshair, updateCrosshair: (cross
 
     useEffect(() => {
         props.updateCrosshair(crosshair);
-    }, [props.updateCrosshair, crosshair])
+    }, [props, props.updateCrosshair, crosshair])
 
     useEffect(() => {
         console.log("colour changed", colour);

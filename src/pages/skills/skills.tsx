@@ -1,5 +1,6 @@
 import "./skills.scss";
 import NavigationButton from "../../components/button/navigation-button/navigation-button";
+import SkillCard from "../../components/skills/skill-card/skill-card";
 export const Skills = () => {
     return (
         <div className="skills-container">
@@ -9,9 +10,7 @@ export const Skills = () => {
             <div className="skills-content">
                 <div className="skills-web-development">
                     <div className="skills-web-development-title-container">
-                        <div className="skills-web-development-title-content">
-                            Web Development
-                        </div>
+                        <SkillCard/>
                     </div>
                 </div>
             </div>

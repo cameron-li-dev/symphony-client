@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {ICrosshairLines} from "../../../data/interfaces/ICrosshairConfig";
+import {ICrosshairLines} from "../../../../data/interfaces/ICrosshairConfig";
 import {Slider} from "../../slider/slider";
 
 const CrosshairCreateLines = (props: { isInner: boolean, lines: ICrosshairLines, updateLines: (lines: ICrosshairLines) => void }) => {

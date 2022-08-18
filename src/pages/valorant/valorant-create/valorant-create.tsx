@@ -2,9 +2,9 @@ import "./valorant-create.scss";
 import NavigationButton from "../../../components/button/navigation-button/navigation-button";
 import defaultCrosshair from "../../../data/default-crosshair.json";
 import React, {useEffect} from "react";
-import CrosshairCard from "../../../components/crosshair-card/crosshair-card";
-import CrosshairCreate from "../../../components/crosshair-create/crosshair-create";
-import {exportCrosshair} from "../../../components/crosshair-card/crosshair-service";
+import CrosshairCard from "../../../components/valorant/crosshair-card/crosshair-card";
+import CrosshairCreate from "../../../components/valorant/crosshair-create/crosshair-create";
+import {exportCrosshair} from "../../../components/valorant/crosshair-card/crosshair-service";
 
 export const ValorantCreate = () => {
     const [crosshair, setCrosshair] = React.useState(JSON.parse(JSON.stringify(defaultCrosshair)));
@@ -22,7 +22,7 @@ export const ValorantCreate = () => {
                     <div className="valorant-create-content--display">
                         <CrosshairCard crosshair={crosshair}/>
                     </div>
-                    <div>{exportCode}</div>
+                    <div style={{width: '128px', wordWrap: "break-word"}}>{exportCode}</div>
                 </div>
 
                 <div className="valorant-create-content--settings">

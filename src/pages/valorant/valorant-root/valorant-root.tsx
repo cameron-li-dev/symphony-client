@@ -3,8 +3,8 @@ import Button from "../../../components/button/button";
 import { Link } from "react-router-dom";
 import { ICrosshairImport } from "../../../data/interfaces/ICrosshair";
 import crosshairData from "../../../data/crosshairs.json";
-import { importCrosshair } from "../../../components/crosshair-card/crosshair-service";
-import CrosshairCard from "../../../components/crosshair-card/crosshair-card";
+import { importCrosshair } from "../../../components/valorant/crosshair-card/crosshair-service";
+import CrosshairCard from "../../../components/valorant/crosshair-card/crosshair-card";
 import "./valorant-root.scss";
 
 const ValorantRoot = () => {

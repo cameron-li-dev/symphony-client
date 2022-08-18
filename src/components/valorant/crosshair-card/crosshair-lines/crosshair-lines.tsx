@@ -1,5 +1,5 @@
 import "./crosshair-lines.scss";
-import {crosshairColour, ICrosshairLines, ICrosshairOutlines} from "../../../data/interfaces/ICrosshairConfig";
+import {crosshairColour, ICrosshairLines, ICrosshairOutlines} from "../../../../data/interfaces/ICrosshairConfig";
 import {getOutlines} from "../crosshair-service";
 
 export const CrosshairLines = (props: { colour: crosshairColour, outlinesConfig: ICrosshairOutlines, linesConfig: ICrosshairLines }) => {
