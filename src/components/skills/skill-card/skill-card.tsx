@@ -1,7 +1,13 @@
-const SkillCard = () => {
+const SkillCard = (props: {title: string}) => {
+    const { title } = props;
     return (
         <div>
-            Test
+            <div>
+                {title}
+            </div>
+            <div>
+                Content
+            </div>
         </div>
     )
 }

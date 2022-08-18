@@ -1,0 +1,17 @@
+{
+  "Sections": [
+    {
+      "name": "Web Development",
+      "skills": [
+        {
+          "name": "Angular",
+          "experience": "Professional"
+        },
+        {
+          "name": "React",
+          "experience": "Personal"
+        }
+      ]
+    }
+  ]
+}
