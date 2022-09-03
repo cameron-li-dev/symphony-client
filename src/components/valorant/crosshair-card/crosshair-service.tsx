@@ -203,7 +203,7 @@ export const exportCrosshair = (config: ICrosshair) => {
 
     // colour - default none ;c;int
     if (config.config.colour !== base.config.colour) {
-        exportedString = exportedString + "c;" + config.config.colour + ";";
+        exportedString = exportedString + "c;" + crosshairColour[config.config.colour] + ";";
     }
 
     // show center dot: d;1 - turn on [default = off]
@@ -220,6 +220,7 @@ export const exportCrosshair = (config: ICrosshair) => {
         }
     }
 
+    // TODO: Fix bug where m;1; is always added regardless of value
     // override firing error offset with crosshair offset: m;1 - turn on [default = off]
     if (config.config.overrideOffset) {
         exportedString = exportedString + "m;1;";
