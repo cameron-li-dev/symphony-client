@@ -6,4 +6,28 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
+    background: black;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.main--socials {
+    display: flex;
+}
+
+.main--socials-link {
+    margin-right: 8px;
+
+
+}
+
+.main--socials-link:last-child {
+    margin-right: 0;
+}
+
+.main--socials-icon {
+    width: 32px;
 }
