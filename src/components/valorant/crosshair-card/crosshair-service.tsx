@@ -287,7 +287,7 @@ export const exportCrosshair = (config: ICrosshair) => {
         }
 
         // inner line movement error: 1m;1 - turn off [default = on]
-        if (config.config.outerLines.lines.movementErrorEnabled) {
+        if (!config.config.outerLines.lines.movementErrorEnabled) {
             exportedString = exportedString + "1m;0;"
             // inner line movement error multiplier: 1s;float
             if (config.config.outerLines.lines.movementError.multiplier !== base.config.outerLines.lines.movementError.multiplier) {
