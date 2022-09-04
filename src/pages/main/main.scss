@@ -1,5 +1,7 @@
 @import "../../styles/globals";
 
+$icon-size: 32px;
+
 .main-container {
     display: flex;
     width: 100vw;
@@ -7,6 +9,8 @@
     justify-content: center;
     align-items: center;
     background: black;
+    font-family: Georgia, serif;
+    color: white;
 }
 
 .main-content {
@@ -20,8 +24,7 @@
 
 .main--socials-link {
     margin-right: 8px;
-
-
+    height: $icon-size;
 }
 
 .main--socials-link:last-child {
@@ -29,5 +32,5 @@
 }
 
 .main--socials-icon {
-    width: 32px;
+    width: $icon-size;
 }
