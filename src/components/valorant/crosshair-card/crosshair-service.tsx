@@ -220,7 +220,6 @@ export const exportCrosshair = (config: ICrosshair) => {
         }
     }
 
-    // TODO: Fix bug where m;1; is always added regardless of value
     // override firing error offset with crosshair offset: m;1 - turn on [default = off]
     if (config.config.overrideOffset) {
         exportedString = exportedString + "m;1;";
@@ -287,9 +286,9 @@ export const exportCrosshair = (config: ICrosshair) => {
             exportedString = exportedString + "1o;" + config.config.outerLines.lines.lineOffset + ";";
         }
 
-        // inner line movement error: 1m;1 - turn on [default = off]
+        // inner line movement error: 1m;1 - turn off [default = on]
         if (config.config.outerLines.lines.movementErrorEnabled) {
-            exportedString = exportedString + "1m;1;"
+            exportedString = exportedString + "1m;0;"
             // inner line movement error multiplier: 1s;float
             if (config.config.outerLines.lines.movementError.multiplier !== base.config.outerLines.lines.movementError.multiplier) {
                 exportedString = exportedString + "1s;" + config.config.outerLines.lines.movementError.multiplier + ";";
