@@ -5,6 +5,7 @@ import featuresData from "../../data/features.json"
 import CvIcon from "../../images/portfolio-rounded-square.svg";
 import LinkedInIcon from "../../images/linkedin-rounded-square.png";
 import TwitterIcon from "../../images/twitter-rounded-square.svg";
+import ProfessionBlueIcon from "../../images/skills/profession-blue.svg";
 
 export const Main = () => {
     // const features: IFeature[] = JSON.parse(JSON.stringify(featuresData));
@@ -66,11 +67,11 @@ export const Main = () => {
                                 </div>
                             </div>
                             <div className="main__skills-row">
-                                <div>
-
+                                <div className="main__skills-row-experience main__skills-row-experience--blue">
+                                    <img src={ProfessionBlueIcon} alt="Professional Experience"/>
                                 </div>
-                                <div>
-
+                                <div className="main__skills-row-skill">
+                                    Angular
                                 </div>
                                 <div>
 

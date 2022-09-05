@@ -2,6 +2,7 @@
 
 $icon-size: 42px;
 $background-colour: #282828;
+$framework-blue-dark: #0D3962;
 $framework-blue-light: #5E97CB;
 
 .main-container {
@@ -66,10 +67,13 @@ $framework-blue-light: #5E97CB;
 
 .main__skills-section {
     display: flex;
+    flex-direction: column;
 }
 
 .main__skills-row {
+    display: flex;
     margin-top: 4px;
+    flex: 1;
 }
 
 .main__skills-confidence-header {
@@ -98,4 +102,20 @@ $framework-blue-light: #5E97CB;
 
 .main__skills-confidence-header__range-top {
     margin-right: 8px;
+}
+
+.main__skills-row-experience {
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+}
+.main__skills-row-experience--blue {
+    background: $framework-blue-dark;
+}
+
+.main__skills-row-skill {
+    background: $framework-blue-light;
+    padding-left: 8px;
+    align-items: center;
+    line-height: 30px;
 }
