@@ -6,20 +6,23 @@ $icon-size: 32px;
     display: flex;
     width: 100vw;
     height: 100vh;
-    justify-content: center;
-    align-items: center;
     background: black;
-    font-family: Georgia, serif;
     color: white;
+    font-family: Georgia, serif;
 }
 
 .main-content {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .main--socials {
     display: flex;
+}
+
+.main--socials-links {
+    transition: opacity .25s;
 }
 
 .main--socials-link {
