@@ -1,12 +1,13 @@
 @import "../../styles/globals";
 
-$icon-size: 32px;
+$icon-size: 42px;
+$background-colour: #282828;
 
 .main-container {
     display: flex;
     width: 100vw;
     height: 100vh;
-    background: black;
+    background: $background-colour;
     color: white;
     font-family: Georgia, serif;
 }
@@ -17,23 +18,47 @@ $icon-size: 32px;
     width: 100%;
 }
 
-.main--socials {
+.main__bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__bio-profile {
+    width: 160px;
+    height: 160px;
+    background: white;
+    border-radius: 80px;
+    margin-top: 40px;
+}
+
+.main__bio-socials, .main__bio-description {
+    margin-top: 12px;
+}
+
+.main__bio-socials {
     display: flex;
 }
 
-.main--socials-links {
+.main__bio-description {
+    width: 45%;
+    font-size: 16px;
+}
+
+.main__bio-socials-links {
     transition: opacity .25s;
 }
 
-.main--socials-link {
+.main__bio-socials-link {
     margin-right: 8px;
     height: $icon-size;
 }
 
-.main--socials-link:last-child {
+.main__bio-socials-link:last-child {
     margin-right: 0;
 }
 
-.main--socials-icon {
+.main__bio-socials-icon {
     width: $icon-size;
 }
