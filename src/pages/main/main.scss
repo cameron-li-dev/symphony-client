@@ -2,6 +2,7 @@
 
 $icon-size: 42px;
 $background-colour: #282828;
+$framework-blue-light: #5E97CB;
 
 .main-container {
     display: flex;
@@ -10,12 +11,13 @@ $background-colour: #282828;
     background: $background-colour;
     color: white;
     font-family: Georgia, serif;
+    justify-content: center;
 }
 
 .main-content {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 45%;
 }
 
 .main__bio {
@@ -23,6 +25,7 @@ $background-colour: #282828;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: opacity .25s ease-in-out;
 }
 
 .main__bio-profile {
@@ -42,12 +45,10 @@ $background-colour: #282828;
 }
 
 .main__bio-description {
-    width: 45%;
     font-size: 16px;
 }
 
 .main__bio-socials-links {
-    transition: opacity .25s;
 }
 
 .main__bio-socials-link {
@@ -61,4 +62,40 @@ $background-colour: #282828;
 
 .main__bio-socials-icon {
     width: $icon-size;
+}
+
+.main__skills-section {
+    display: flex;
+}
+
+.main__skills-row {
+    margin-top: 4px;
+}
+
+.main__skills-confidence-header {
+    display: flex;
+    width: 100%;
+}
+
+.main__skills-confidence-header-title {
+    background: linear-gradient(90deg, #0D3962 0%, #28659E 69.27%);
+    color: white;
+    font-size: 20px;
+    padding: 4px 40px 4px 4px;
+}
+
+.main__skills-confidence-header__range {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    background: $framework-blue-light;
+    align-items: center;
+}
+
+.main__skills-confidence-header__range-bottom {
+    margin-left: 8px;
+}
+
+.main__skills-confidence-header__range-top {
+    margin-right: 8px;
 }

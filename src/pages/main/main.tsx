@@ -24,11 +24,11 @@ export const Main = () => {
     return (
         <div className="main-container">
             <div className="main-content">
-                <div className="main__bio">
+                <div className="main__bio" style={{ opacity: isSocialsLoaded ? 1 : 0 }}>
                     <div className="main__bio-profile">
                     </div>
                     <div className="main__bio-socials">
-                        <div className="main__bio-socials-links" style={{ opacity: isSocialsLoaded ? 1 : 0 }}>
+                        <div className="main__bio-socials-links">
                             <a id="cv" className="main__bio-socials-link" href={"https://drive.google.com/file/d/19i9ADHHAguNaqNhMzdIlfOgAKMEsvF_e/view?usp=sharing"}>
                                 <img className="main__bio-socials-icon" src={CvIcon} alt="CV" onLoad={() => setIsCvLoaded(true)}/>
                             </a>
@@ -49,6 +49,35 @@ export const Main = () => {
                 </div>
                 <div>
                     Skills
+                    <div>
+                        Frameworks
+                        <div className="main__skills-section">
+                            <div className="main__skills-confidence-header main__skills-row">
+                                <div className="main__skills-confidence-header-title">
+                                    Confidence
+                                </div>
+                                <div className="main__skills-confidence-header__range">
+                                    <label className="main__skills-confidence-header__range-bottom">
+                                        1
+                                    </label>
+                                    <label className="main__skills-confidence-header__range-top">
+                                        10
+                                    </label>
+                                </div>
+                            </div>
+                            <div className="main__skills-row">
+                                <div>
+
+                                </div>
+                                <div>
+
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     Projects
