@@ -55,7 +55,9 @@ export const Main = () => {
                         <div className="main__skills-section">
                             <div className="main__skills-confidence-header main__skills-row">
                                 <div className="main__skills-confidence-header-title">
-                                    Confidence
+                                    <label className="main__skills_confidence-header-title-label">
+                                        Confidence
+                                    </label>
                                 </div>
                                 <div className="main__skills-confidence-header__range">
                                     <label className="main__skills-confidence-header__range-bottom">
@@ -67,14 +69,18 @@ export const Main = () => {
                                 </div>
                             </div>
                             <div className="main__skills-row">
-                                <div className="main__skills-row-experience main__skills-row-experience--blue">
-                                    <img src={ProfessionBlueIcon} alt="Professional Experience"/>
+                                <div className="main__skills-row__skill-left">
+                                    <div className="main__skills-row-experience main__skills-row-experience--blue">
+                                        <img src={ProfessionBlueIcon} alt="Professional Experience"/>
+                                    </div>
+                                    <div className="main__skills-row__skill-title">
+                                        Angular
+                                    </div>
                                 </div>
-                                <div className="main__skills-row-skill">
-                                    Angular
-                                </div>
-                                <div>
+                                <div className="main__skils-row__skill-right">
+                                    <div className="main__skills-row__skill-right-bar">
 
+                                    </div>
                                 </div>
                             </div>
                         </div>

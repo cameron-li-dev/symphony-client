@@ -3,6 +3,7 @@
 $icon-size: 42px;
 $background-colour: #282828;
 $framework-blue-dark: #0D3962;
+$framework-blue: #28659E;
 $framework-blue-light: #5E97CB;
 
 .main-container {
@@ -82,10 +83,16 @@ $framework-blue-light: #5E97CB;
 }
 
 .main__skills-confidence-header-title {
+    display: flex;
     background: linear-gradient(90deg, #0D3962 0%, #28659E 69.27%);
     color: white;
-    font-size: 20px;
-    padding: 4px 40px 4px 4px;
+    font-size: 12px;
+    width: 150px;
+    align-items: center;
+}
+
+.main__skills_confidence-header-title-label {
+    margin-left: 2px;
 }
 
 .main__skills-confidence-header__range {
@@ -97,11 +104,18 @@ $framework-blue-light: #5E97CB;
 }
 
 .main__skills-confidence-header__range-bottom {
+    font-size: 12px;
     margin-left: 8px;
 }
 
 .main__skills-confidence-header__range-top {
+    font-size: 12px;
     margin-right: 8px;
+}
+
+.main__skills-confidence-header__range, .main__skills-confidence-header__range-bottom, .main__skills-confidence-header__range-top {
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
 .main__skills-row-experience {
@@ -113,9 +127,27 @@ $framework-blue-light: #5E97CB;
     background: $framework-blue-dark;
 }
 
-.main__skills-row-skill {
-    background: $framework-blue-light;
+.main__skills-row__skill-left {
+    display: flex;
+    width: 150px;
+}
+
+.main__skills-row__skill-title {
+    background: $framework-blue;
     padding-left: 8px;
     align-items: center;
     line-height: 30px;
+    width: 100%;
+}
+
+.main__skils-row__skill-right {
+    position: relative;
+    display: flex;
+    flex: 1;
+}
+
+.main__skills-row__skill-right-bar {
+    background: $framework-blue-light;
+    width: 75%;
+    border-bottom-right-radius: 15px;
 }
