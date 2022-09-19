@@ -1,0 +1,30 @@
+.main__bio {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  flex: 1;
+}
+
+.main__bio-logo {
+  position: absolute;
+  transition: opacity ease-in-out 0.1s;
+  width: 48px;
+  left: 32px;
+  top: 32px;
+}
+
+.main__bio-profile {
+  width: 160px;
+  height: 160px;
+  background: white;
+  border-radius: 80px;
+}
+
+.main__bio-socials, .main__bio-description {
+  margin-top: 12px;
+}
+
+.main__bio-description {
+  font-size: 16px;
+}
+

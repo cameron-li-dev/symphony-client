@@ -1,0 +1,40 @@
+$icon-size: 48px;
+
+.main__bio-socials {
+  display: flex;
+  transition: opacity .25s ease-in-out;
+  position: absolute;
+  align-items: center;
+  left: 16px;
+}
+
+.main__bio-socials-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.main__bio-socials-link {
+  margin-bottom: 16px;
+}
+
+.main__bio-socials-icon {
+  border-radius: 10px;
+  border: 1px solid black;
+  background: black;
+  height: 100%;
+}
+
+.main__bio-socials-link, .main__bio-socials-icon {
+  width: $icon-size;
+  height: $icon-size;
+  transition: height 0.25s ease-in-out, width 0.25s ease-in-out;
+}
+
+.main__bio-socials-link:hover, .main__bio-socials-icon:hover {
+  width: $icon-size;
+  height: $icon-size;
+}
+
+.main__bio-socials-link:last-child {
+  margin-bottom: 0;
+}

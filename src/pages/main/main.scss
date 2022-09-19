@@ -1,10 +1,12 @@
 @import "../../styles/globals";
 
-$icon-size: 42px;
 $background-colour: #282828;
 $framework-blue-dark: #0D3962;
 $framework-blue: #28659E;
 $framework-blue-light: #5E97CB;
+$framework-blue-lightest: #92C3EF;
+$framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-blue-light 100%);
+
 
 .main-container {
     display: flex;
@@ -17,53 +19,13 @@ $framework-blue-light: #5E97CB;
 }
 
 .main-content {
-    display: flex;
-    flex-direction: column;
-    width: 45%;
 }
 
-.main__bio {
+.main-section {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: opacity .25s ease-in-out;
-}
-
-.main__bio-profile {
-    width: 160px;
-    height: 160px;
+    width: 100vw;
+    height: 100vh;
     background: white;
-    border-radius: 80px;
-    margin-top: 40px;
-}
-
-.main__bio-socials, .main__bio-description {
-    margin-top: 12px;
-}
-
-.main__bio-socials {
-    display: flex;
-}
-
-.main__bio-description {
-    font-size: 16px;
-}
-
-.main__bio-socials-links {
-}
-
-.main__bio-socials-link {
-    margin-right: 8px;
-    height: $icon-size;
-}
-
-.main__bio-socials-link:last-child {
-    margin-right: 0;
-}
-
-.main__bio-socials-icon {
-    width: $icon-size;
 }
 
 .main__skills-section {
@@ -84,7 +46,7 @@ $framework-blue-light: #5E97CB;
 
 .main__skills-confidence-header-title {
     display: flex;
-    background: linear-gradient(90deg, #0D3962 0%, #28659E 69.27%);
+    background: $framework-blue-gradient;
     color: white;
     font-size: 12px;
     width: 150px;
@@ -133,21 +95,30 @@ $framework-blue-light: #5E97CB;
 }
 
 .main__skills-row__skill-title {
-    background: $framework-blue;
-    padding-left: 8px;
+    background: $framework-blue-gradient;
+    padding-left: 4px;
     align-items: center;
-    line-height: 30px;
+    line-height: 20px;
     width: 100%;
+    font-size: 12px;
 }
 
 .main__skils-row__skill-right {
     position: relative;
     display: flex;
     flex: 1;
+    margin-left: 4px;
 }
 
 .main__skills-row__skill-right-bar {
-    background: $framework-blue-light;
-    width: 75%;
-    border-bottom-right-radius: 15px;
+    background: $framework-blue-lightest;
+    width: 80%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.main__skills-row__skill-right-bar-value {
+    font-size: 12px;
+    margin-right: 8px;
 }
