@@ -1,7 +1,6 @@
 import CaliLogo from "../../../images/cali-logo.svg";
 import React from "react";
 import "./main-bio.scss";
-import MainBioSocials from "./main-bio-socials/main-bio-socials";
 
 export const MainBio = () => {
     const [isLoaded, setIsLoaded] = React.useState(false);
@@ -25,22 +24,19 @@ export const MainBio = () => {
                 </div>
                 <div className="main__bio-nav">
                     <div className="main__bio-nav-bar">
-                        <a>
+                        <a href={""}>
                             Test 1
                         </a>
-                        <a>
+                        <a href={""}>
                             Test 2
                         </a>
-                        <a>
+                        <a href={""}>
                             Test 3
                         </a>
                     </div>
-                    <div className="main__bio-nav-line">
-                    </div>
+                    <div className="main__bio-nav-line"/>
                 </div>
             </div>
-
-            <MainBioSocials/>
         </div>
     )
 }
