@@ -1,23 +1,53 @@
+@import "../../../styles/globals";
+
 .main__bio {
   display: flex;
   flex-direction: column;
   height: 100vh;
   flex: 1;
+  user-select: none;
 }
 
 .main__bio-logo {
   position: absolute;
-  transition: opacity ease-in-out 0.1s;
+  transition: $global-load;
   width: 48px;
   left: 32px;
   top: 32px;
 }
 
 .main__bio-profile {
-  width: 160px;
-  height: 160px;
-  background: white;
-  border-radius: 80px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: black;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__bio-profile-center {
+  display: flex;
+  position: relative;
+}
+
+.main__bio-profile__center-piece {
+  background: black;
+  width: 256px;
+  height: 256px;
+  padding: 8px;
+  color: white;
+  //animation-name: center-piece-float;
+  //animation-duration: 4s;
+  //animation-iteration-count: infinite;
+}
+
+.main__bio-profile__center-piece p {
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 85px;
+  letter-spacing: 0.15em;
+  margin: 0;
 }
 
 .main__bio-socials, .main__bio-description {
@@ -28,3 +58,34 @@
   font-size: 16px;
 }
 
+.main__bio-nav {
+  display: flex;
+  position: relative;
+  width: 75vw;
+  align-items: center;
+}
+
+.main__bio-nav ul {
+  list-style: none;
+}
+
+.main__bio-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.main__bio-nav-bar a {
+  background: white;
+  z-index: 100;
+  padding: 4px;
+}
+
+.main__bio-nav-line {
+  width: 100%;
+  background: black;
+  height: 2px;
+  position: absolute;
+}

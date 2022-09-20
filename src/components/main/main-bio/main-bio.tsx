@@ -1,8 +1,5 @@
 import CaliLogo from "../../../images/cali-logo.svg";
-import CvIcon from "../../../images/portfolio-rounded-square.svg";
-import LinkedInIcon from "../../../images/linkedin-rounded-square.png";
-import TwitterIcon from "../../../images/twitter-rounded-square.svg";
-import React, {useEffect} from "react";
+import React from "react";
 import "./main-bio.scss";
 import MainBioSocials from "./main-bio-socials/main-bio-socials";
 
@@ -11,18 +8,39 @@ export const MainBio = () => {
 
     return (
         <div className="main__bio">
-            <div>
-                <img className="main__bio-logo" src={CaliLogo} alt="Logo" style={{ opacity: isLoaded ? 1 : 0 }} onLoad={_ => setIsLoaded(true)}/>
-            </div>
+            <img className="main__bio-logo" src={CaliLogo} alt="Logo" style={{ opacity: isLoaded ? 1 : 0 }} onLoad={_ => setIsLoaded(true)}/>
             <div className="main__bio-profile">
+                <div className="main__bio-profile-center">
+                    <div className="main__bio-profile__center-piece">
+                        <p>
+                            CAM
+                        </p>
+                        <p>
+                            ERON
+                        </p>
+                        <p>
+                            LI
+                        </p>
+                    </div>
+                </div>
+                <div className="main__bio-nav">
+                    <div className="main__bio-nav-bar">
+                        <a>
+                            Test 1
+                        </a>
+                        <a>
+                            Test 2
+                        </a>
+                        <a>
+                            Test 3
+                        </a>
+                    </div>
+                    <div className="main__bio-nav-line">
+                    </div>
+                </div>
             </div>
+
             <MainBioSocials/>
-            <div className="main__bio-description">
-                Growth focused and collaborative Junior Full Stack Developer with 1 year of professional
-                experience in an agile, customer focused environment at Trade Me. My role largely involves
-                furthering the customer experience and increasing engagement across our platform through
-                work done on the entire stack.
-            </div>
         </div>
     )
 }
