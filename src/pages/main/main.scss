@@ -19,8 +19,10 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
 }
 
 .main-content {
+    position: relative;
     overflow: scroll;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth
 }
 
 .main-content .main-section {

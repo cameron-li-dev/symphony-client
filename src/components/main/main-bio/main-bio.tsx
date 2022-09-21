@@ -1,9 +1,12 @@
 import CaliLogo from "../../../images/cali-logo.svg";
 import React from "react";
 import "./main-bio.scss";
+import MainNav from "../main-nav/main-nav";
+import {INavLink} from "../../../data/interfaces/INavLink";
 
-export const MainBio = () => {
+export const MainBio = (props: {links: INavLink[]}) => {
     const [isLoaded, setIsLoaded] = React.useState(false);
+    const { links } = props;
 
     return (
         <div className="main__bio">
@@ -22,20 +25,9 @@ export const MainBio = () => {
                         </p>
                     </div>
                 </div>
-                <div className="main__bio-nav">
-                    <div className="main__bio-nav-bar">
-                        <a href={""}>
-                            Test 1
-                        </a>
-                        <a href={""}>
-                            Test 2
-                        </a>
-                        <a href={""}>
-                            Test 3
-                        </a>
-                    </div>
-                    <div className="main__bio-nav-line"/>
-                </div>
+                <MainNav horizontal={true} links={links}/>
+
+                <MainNav horizontal={false} links={links}/>
             </div>
         </div>
     )
