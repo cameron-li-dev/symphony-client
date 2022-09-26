@@ -26,8 +26,6 @@ export const MainBio = (props: {links: INavLink[]}) => {
                     </div>
                 </div>
                 <MainNav horizontal={true} links={links}/>
-
-                <MainNav horizontal={false} links={links}/>
             </div>
         </div>
     )

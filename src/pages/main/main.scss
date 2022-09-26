@@ -22,11 +22,21 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
     position: relative;
     overflow: scroll;
     scroll-snap-type: y mandatory;
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .main-content .main-section {
     scroll-snap-align: start
+}
+
+.main-content-vertical-nav {
+    display: flex;
+    right: 0;
+    height: 100vh;
+    position: fixed;
+    transition: 0.25s ease-in-out;
+    mix-blend-mode: darken;
 }
 
 .main-section {
@@ -111,7 +121,7 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
     font-size: 12px;
 }
 
-.main__skils-row__skill-right {
+.main__skills-row__skill-right {
     position: relative;
     display: flex;
     flex: 1;

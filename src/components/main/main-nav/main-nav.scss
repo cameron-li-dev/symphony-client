@@ -46,6 +46,11 @@
   position: absolute;
 }
 
+.main__bio-nav-container--vertical {
+  display: flex;
+  align-items: center;
+}
+
 .main__bio-nav--vertical {
   display: flex;
   position: absolute;
