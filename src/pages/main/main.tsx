@@ -33,7 +33,7 @@ export const Main = () => {
     };
 
     const handleResize = () => {
-        setNavPosition(window.innerHeight);
+        setNavPosition(window.innerHeight * .95);
     }
 
     useEffect(() => {
@@ -57,10 +57,6 @@ export const Main = () => {
     useEffect(() => {
         handleResize();
     }, [window.innerHeight])
-
-    useEffect(() => {
-        console.log(scrollPosition + "/" + navPosition);
-    }, [navPosition, scrollPosition])
 
     return (
         <div className="main-container">
