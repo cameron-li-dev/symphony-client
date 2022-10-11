@@ -34,7 +34,7 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
     right: 0;
     height: 100vh;
     position: fixed;
-    transition: opacity 0.25s ease-in-out;
+    transition: opacity $global-load;
 }
 
 .main-section {

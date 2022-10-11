@@ -56,15 +56,7 @@ const generateLinkButtons = (horizontal: boolean, links: INavLink[], navColor: s
             </a>
         );
 
-        if (links.length === 1) {
-            linkButtons.push(
-                <>
-                    <div key={"line-start"+link.link} className={navLineClassName + "--end"} style={{background: navColor}}></div>
-                    {linkButton}
-                    <div key={"line-end"+link.link} className={navLineClassName + "--end"} style={{background: navColor}}></div>
-                </>
-            );
-        } else if (index === 0 && links.length > 1) {
+        if (index === 0 && links.length > 1) {
             linkButtons.push(
                 <>
                     <div key={"line-start"+link.link} className={navLineClassName + "--end"} style={{background: navColor}}></div>

@@ -8,27 +8,34 @@ import MainNav from "../../components/main/main-nav/main-nav";
 const navLinks: INavLink[] = [
     {
         link: "#first",
-        text: "First"
+        text: "First",
+        mode: "dark"
     },
     {
         link: "#second",
-        text: "Second"
+        text: "Second",
+        mode: "light"
     },
     {
         link: "#third",
-        text: "Third"
+        text: "Third",
+        mode: "dark"
     }
 ];
 
 export const Main = () => {
     const [scrollPosition, setScrollPosition] = React.useState(0);
     const [navPosition, setNavPosition] = React.useState(700);
+    const [navMode, setNavMode] = React.useState(navLinks[0].mode)
 
     const handleScroll = () => {
         const content = document.getElementById('main-content');
 
         if (content) {
             setScrollPosition(content.scrollTop);
+
+            let findSection = Math.round(content.scrollTop / window.innerHeight);
+            setNavMode(navLinks[findSection].mode);
         }
     };
 
@@ -58,7 +65,7 @@ export const Main = () => {
         <div className="main-container">
             <div id="main-content" className="main-content">
                 <div className="main-content-vertical-nav" style={{display: scrollPosition > 50 ? 'flex' : 'none', opacity: scrollPosition > navPosition ? 1 : 0}}>
-                    <MainNav horizontal={false} links={navLinks} colorMode={"light"}/>
+                    <MainNav horizontal={false} links={navLinks} colorMode={navMode}/>
                 </div>
                 <div id="first" className="main-section">
                     <MainBio links={ navLinks }/>

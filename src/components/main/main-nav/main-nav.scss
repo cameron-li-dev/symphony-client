@@ -1,5 +1,7 @@
 @import "../../../styles/globals";
 
+$mode-shift-duration: 0.5s;
+
 .main__bio-nav {
   display: flex;
   width: 500px;
@@ -67,6 +69,7 @@
   align-items: center;
   margin-top: 16px;
   margin-bottom: 16px;
+  transition: $mode-shift-duration ease-in-out;
 }
 
 .main__bio-nav-bar--vertical-link {
@@ -75,14 +78,17 @@
   padding: 4px;
   text-decoration: none;
   writing-mode: vertical-lr;
+  transition: $mode-shift-duration ease-in-out;
 }
 
 .main__bio-nav-line--vertical {
   width: 2px;
   height: 100%;
+  transition: $mode-shift-duration ease-in-out;
 }
 
 .main__bio-nav-line--vertical--end {
   width: 2px;
   height: 5%;
+  transition: $mode-shift-duration ease-in-out;
 }
