@@ -31,12 +31,10 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
 }
 
 .main-content-vertical-nav {
-    display: flex;
     right: 0;
     height: 100vh;
     position: fixed;
-    transition: 0.25s ease-in-out;
-    mix-blend-mode: darken;
+    transition: opacity 0.25s ease-in-out;
 }
 
 .main-section {

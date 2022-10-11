@@ -54,22 +54,18 @@ export const Main = () => {
         }
     }, []);
 
-    useEffect(() => {
-        handleResize();
-    }, [window.innerHeight])
-
     return (
         <div className="main-container">
             <div id="main-content" className="main-content">
-                <div className="main-content-vertical-nav" style={{opacity: scrollPosition > navPosition ? 1 : 0}}>
-                    <MainNav horizontal={false} links={navLinks}/>
+                <div className="main-content-vertical-nav" style={{display: scrollPosition > 50 ? 'flex' : 'none', opacity: scrollPosition > navPosition ? 1 : 0}}>
+                    <MainNav horizontal={false} links={navLinks} colorMode={"light"}/>
                 </div>
                 <div id="first" className="main-section">
                     <MainBio links={ navLinks }/>
                     <MainBioSocials/>
                 </div>
                 <div id="second" className="main-section">
-                    <div style={{width: "100%", height: "100%", background: "white"}}>
+                    <div style={{width: "100%", height: "100%", background: "black"}}>
 
                     </div>
                 </div>
@@ -80,7 +76,7 @@ export const Main = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Main
