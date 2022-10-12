@@ -26,7 +26,7 @@ const navLinks: INavLink[] = [
 export const Main = () => {
     const [scrollPosition, setScrollPosition] = React.useState(0);
     const [navPosition, setNavPosition] = React.useState(700);
-    const [navMode, setNavMode] = React.useState(navLinks[0].mode)
+    const [currentSection, setCurrentSection] = React.useState(0);
 
     const handleScroll = () => {
         const content = document.getElementById('main-content');
@@ -34,8 +34,10 @@ export const Main = () => {
         if (content) {
             setScrollPosition(content.scrollTop);
 
-            let findSection = Math.round(content.scrollTop / window.innerHeight);
-            setNavMode(navLinks[findSection].mode);
+            let findSection = Math.round(content.scrollTop / (window.innerHeight * 0.9));
+            if (findSection !== currentSection) {
+                setCurrentSection(findSection);
+            }
         }
     };
 
@@ -65,7 +67,7 @@ export const Main = () => {
         <div className="main-container">
             <div id="main-content" className="main-content">
                 <div className="main-content-vertical-nav" style={{display: scrollPosition > 50 ? 'flex' : 'none', opacity: scrollPosition > navPosition ? 1 : 0}}>
-                    <MainNav horizontal={false} links={navLinks} colorMode={navMode}/>
+                    <MainNav horizontal={false} links={navLinks} colorMode={navLinks[currentSection].mode}/>
                 </div>
                 <div id="first" className="main-section">
                     <MainBio links={ navLinks }/>
@@ -73,7 +75,9 @@ export const Main = () => {
                 </div>
                 <div id="second" className="main-section">
                     <div style={{width: "100%", height: "100%", background: "black"}}>
-
+                        <div style={{color: "white"}}>
+                            Something goes here
+                        </div>
                     </div>
                 </div>
                 <div id="third" className="main-section">

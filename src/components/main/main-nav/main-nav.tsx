@@ -57,27 +57,15 @@ const generateLinkButtons = (horizontal: boolean, links: INavLink[], navColor: s
         );
 
         if (index === 0 && links.length > 1) {
-            linkButtons.push(
-                <>
-                    <div key={"line-start"+link.link} className={navLineClassName + "--end"} style={{background: navColor}}></div>
-                    {linkButton}
-                    <div key={"line"+link.link} className={navLineClassName} style={{background: navColor}}></div>
-                </>
-            );
+            linkButtons.push(<div key={"line-start"+link.link} className={navLineClassName + "--end"} style={{background: navColor}}></div>);
+            linkButtons.push(linkButton);
+            linkButtons.push(<div key={"line"+link.link} className={navLineClassName} style={{background: navColor}}></div>);
         } else if (links.length - 1 === index) {
-            linkButtons.push(
-                <>
-                    {linkButton}
-                    <div key={"line-end"+link.link} className={navLineClassName + "--end"} style={{background: navColor}}></div>
-                </>
-            );
+            linkButtons.push(linkButton);
+            linkButtons.push(<div key={"line-end"+link.link} className={navLineClassName + "--end"} style={{background: navColor}}></div>);
         } else {
-            linkButtons.push(
-                <>
-                    {linkButton}
-                    <div key={"line"+link.link} className={navLineClassName} style={{background: navColor}}></div>
-                </>
-            );
+            linkButtons.push(linkButton);
+            linkButtons.push(<div key={"line"+link.link} className={navLineClassName} style={{background: navColor}}></div>);
         }
     });
 
