@@ -26,7 +26,9 @@ const navLinks: INavLink[] = [
 export const Main = () => {
     const [scrollPosition, setScrollPosition] = React.useState(0);
     const [navPosition, setNavPosition] = React.useState(700);
-    const [currentSection, setCurrentSection] = React.useState(0);
+    const [currentSection, setCurrentSection] = React.useState(1);
+    const [currentNavMode, setCurrentNavMode] = React.useState(navLinks[currentSection].mode);
+    const [displayVerticalNav, setDisplayVerticalNav] = React.useState(false);
 
     const handleScroll = () => {
         const content = document.getElementById('main-content');
@@ -35,7 +37,7 @@ export const Main = () => {
             setScrollPosition(content.scrollTop);
 
             let findSection = Math.round(content.scrollTop / (window.innerHeight * 0.9));
-            if (findSection !== currentSection) {
+            if (findSection !== currentSection && findSection > 0) {
                 setCurrentSection(findSection);
             }
         }
@@ -44,6 +46,23 @@ export const Main = () => {
     const handleResize = () => {
         setNavPosition(window.innerHeight * .95);
     }
+
+    useEffect(() => {
+        // if (currentSection === 1) {
+        //     setDisplayVerticalNav(false);
+        //     setNavPosition(window.innerHeight * 1.9);
+        // } else
+        if (scrollPosition > 50) {
+            setDisplayVerticalNav(true);
+        } else {
+            setDisplayVerticalNav(false);
+        }
+
+    }, [currentSection, scrollPosition]);
+
+    useEffect(() => {
+        setCurrentNavMode(navLinks[currentSection].mode);
+    }, [currentSection]);
 
     useEffect(() => {
         const content = document.getElementById('main-content');
@@ -61,12 +80,12 @@ export const Main = () => {
                 content.removeEventListener('scroll', handleScroll);
             }
         }
-    }, []);
+    }, [handleScroll, handleResize]);
 
     return (
         <div className="main-container">
             <div id="main-content" className="main-content">
-                <div className="main-content-vertical-nav" style={{display: scrollPosition > 50 ? 'flex' : 'none', opacity: scrollPosition > navPosition ? 1 : 0}}>
+                <div className="main-content-vertical-nav" style={{display: displayVerticalNav ? 'flex' : 'none', opacity: scrollPosition > navPosition ? 1 : 0}}>
                     <MainNav horizontal={false} links={navLinks} colorMode={navLinks[currentSection].mode}/>
                 </div>
                 <div id="first" className="main-section">
@@ -74,8 +93,8 @@ export const Main = () => {
                     <MainBioSocials/>
                 </div>
                 <div id="second" className="main-section">
-                    <div style={{width: "100%", height: "100%", background: "black"}}>
-                        <div style={{color: "white"}}>
+                    <div style={{width: "100%", height: "100%", background: "black", display: "flex"}}>
+                        <div style={{color: "white", alignSelf: "center", justifySelf: "center", background: "gray", width: "100%", height: "500px", borderTop: "2px solid white", borderBottom: "2px solid white"}}>
                             Something goes here
                         </div>
                     </div>
