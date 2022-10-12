@@ -37,7 +37,7 @@ export const Main = () => {
             setScrollPosition(content.scrollTop);
 
             let findSection = Math.round(content.scrollTop / (window.innerHeight * 0.9));
-            if (findSection !== currentSection && findSection > 0) {
+            if (findSection > 0) {
                 setCurrentSection(findSection);
             }
         }
@@ -80,13 +80,13 @@ export const Main = () => {
                 content.removeEventListener('scroll', handleScroll);
             }
         }
-    }, [handleScroll, handleResize]);
+    }, []);
 
     return (
         <div className="main-container">
             <div id="main-content" className="main-content">
                 <div className="main-content-vertical-nav" style={{display: displayVerticalNav ? 'flex' : 'none', opacity: scrollPosition > navPosition ? 1 : 0}}>
-                    <MainNav horizontal={false} links={navLinks} colorMode={navLinks[currentSection].mode}/>
+                    <MainNav horizontal={false} links={navLinks} colorMode={currentNavMode}/>
                 </div>
                 <div id="first" className="main-section">
                     <MainBio links={ navLinks }/>
