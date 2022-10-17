@@ -9,6 +9,7 @@ $mode-shift-duration: 0.5s;
   position: relative;
   align-items: center;
   margin-top: 64px;
+  font-family: 'Noto-Sans', sans-serif;
 
   transition: width $global-load, opacity $global-load;
 
@@ -38,21 +39,31 @@ $mode-shift-duration: 0.5s;
   z-index: 100;
   padding: 4px;
   text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+
+  transition: text-shadow $global-load;
+}
+
+.main__bio-nav-bar-link:hover {
+  text-shadow: 1px 2px 4px rgba(.95, .95, .95, 0.15);
 }
 
 .main__bio-nav-line {
   width: 100%;
-  height: 2px;
+  height: 1px;
 }
 
 .main__bio-nav-line--end {
   width: 5%;
-  height: 2px;
+  height: 1px;
 }
 
 .main__bio-nav-container--vertical {
   display: flex;
   align-items: center;
+  font-family: 'Noto-Sans', sans-serif;
 }
 
 .main__bio-nav--vertical {
@@ -73,22 +84,26 @@ $mode-shift-duration: 0.5s;
 }
 
 .main__bio-nav-bar--vertical-link {
-  font-weight: 600;
   z-index: 100;
   padding: 4px;
   text-decoration: none;
   writing-mode: vertical-lr;
-  transition: $mode-shift-duration ease-in-out;
+  font-size: 18px;
+  transition: $mode-shift-duration ease-in-out, text-shadow $global-load;
 }
 
+.main__bio-nav-bar--vertical-link:hover {
+  text-shadow: 1px 2px 4px rgba(.95, .95, .95, 0.15);
+};
+
 .main__bio-nav-line--vertical {
-  width: 2px;
+  width: 1px;
   height: 100%;
   transition: $mode-shift-duration ease-in-out;
 }
 
 .main__bio-nav-line--vertical--end {
-  width: 2px;
+  width: 1px;
   height: 5%;
   transition: $mode-shift-duration ease-in-out;
 }

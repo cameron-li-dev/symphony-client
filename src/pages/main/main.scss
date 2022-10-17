@@ -44,97 +44,30 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
     background: white;
 }
 
-.main__skills-section {
+.main-projects-section {
     display: flex;
     flex-direction: column;
-}
-
-.main__skills-row {
-    display: flex;
-    margin-top: 4px;
-    flex: 1;
-}
-
-.main__skills-confidence-header {
-    display: flex;
+    align-items: center;
     width: 100%;
+    flex: 1;
+    color: black;
 }
 
-.main__skills-confidence-header-title {
-    display: flex;
-    background: $framework-blue-gradient;
+.main-projects-section-title {
+    background: black;
     color: white;
-    font-size: 12px;
-    width: 150px;
-    align-items: center;
-}
-
-.main__skills_confidence-header-title-label {
-    margin-left: 2px;
-}
-
-.main__skills-confidence-header__range {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    background: $framework-blue-light;
-    align-items: center;
-}
-
-.main__skills-confidence-header__range-bottom {
-    font-size: 12px;
-    margin-left: 8px;
-}
-
-.main__skills-confidence-header__range-top {
-    font-size: 12px;
-    margin-right: 8px;
-}
-
-.main__skills-confidence-header__range, .main__skills-confidence-header__range-bottom, .main__skills-confidence-header__range-top {
-    padding-top: 1px;
-    padding-bottom: 1px;
-}
-
-.main__skills-row-experience {
-    display: flex;
-    padding: 5px;
-    justify-content: center;
-}
-.main__skills-row-experience--blue {
-    background: $framework-blue-dark;
-}
-
-.main__skills-row__skill-left {
-    display: flex;
-    width: 150px;
-}
-
-.main__skills-row__skill-title {
-    background: $framework-blue-gradient;
-    padding-left: 4px;
-    align-items: center;
-    line-height: 20px;
     width: 100%;
-    font-size: 12px;
+    padding: 8px 8px 8px 128px;
+    margin-top: 0;
 }
 
-.main__skills-row__skill-right {
-    position: relative;
+.main-section__gallery {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.main-section__gallery-piece {
     display: flex;
     flex: 1;
-    margin-left: 4px;
-}
-
-.main__skills-row__skill-right-bar {
-    background: $framework-blue-lightest;
-    width: 80%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
-
-.main__skills-row__skill-right-bar-value {
-    font-size: 12px;
-    margin-right: 8px;
 }
