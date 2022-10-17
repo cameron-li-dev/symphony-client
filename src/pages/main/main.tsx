@@ -91,9 +91,11 @@ export const Main = () => {
                 </div>
                 <div id="projects" className="main-section">
                     <div className="main-projects-section">
-                        <h1 className="main-projects-section-title">
-                            Projects
-                        </h1>
+                        <div className="main-projects-section-title-container">
+                            <h1 className="main-projects-section-title">
+                                PROJECTS
+                            </h1>
+                        </div>
                         <div style={{width: "70%"}}>
                             <div className="main-section__gallery">
                                 <div className="main-section__gallery-piece" style={{marginTop: "100px"}}>

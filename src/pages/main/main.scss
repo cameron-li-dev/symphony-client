@@ -53,12 +53,21 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
     color: black;
 }
 
+.main-projects-section-title-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: absolute;
+    align-self: start;
+}
+
 .main-projects-section-title {
-    background: black;
-    color: white;
-    width: 100%;
-    padding: 8px 8px 8px 128px;
-    margin-top: 0;
+    color: darkgray;
+    margin: 64px 0 0;
+    writing-mode: vertical-rl;
+    transform: scale(-1, -1);
+    font-size: 128px;
 }
 
 .main-section__gallery {
