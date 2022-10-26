@@ -19,7 +19,6 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
 }
 
 .main-content {
-    position: relative;
     overflow: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -31,6 +30,7 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
 }
 
 .main-content-vertical-nav {
+    z-index: 1000;
     right: 0;
     height: 100vh;
     position: fixed;
@@ -42,7 +42,13 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
     width: 100vw;
     height: 100vh;
     background: white;
+}
+
+.main-section-body {
+    display: flex;
     position: relative;
+    flex: 1 1;
+    transition: opacity $global-load-slow;
 }
 
 .main-projects-section {
@@ -52,7 +58,22 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
     width: 100%;
     flex: 1;
     color: black;
-    transition: opacity $global-load-slow;
+}
+
+.main-main-section-title-container {
+    display: flex;
+    height: 100%;
+    right: 0;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+}
+
+.main-main-section-title {
+    color: darkgray;
+    margin: 64px 16px 0;
+    writing-mode: vertical-rl;
+    font-size: 128px;
 }
 
 .main-projects-section-title-container {
@@ -72,23 +93,3 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
     font-size: 128px;
 }
 
-.main-section__gallery {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.main-section__gallery-piece {
-    display: flex;
-    flex: 1;
-}
-
-.main-section__gallery-piece a {
-    height: 250px;
-}
-
-.main-section__gallery-piece-image {
-    width: 250px;
-    background: black;
-    border-radius: 16px;
-}

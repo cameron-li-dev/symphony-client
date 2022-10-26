@@ -6,6 +6,8 @@ import { INavLink } from "../../data/interfaces/INavLink";
 import MainNav from "../../components/main/main-nav/main-nav";
 import ValorantLogo from "../../images/valorant-logo_brandlogos.net_kghsj.png";
 import SectionNav from "../../components/main/section-nav/section-nav";
+import {IProject} from "../../data/interfaces/IProject";
+import MainProject from "../../components/main/main-project/main-project";
 
 const navLinks: INavLink[] = [
     {
@@ -22,6 +24,33 @@ const navLinks: INavLink[] = [
         link: "#third",
         text: "Third",
         mode: "dark"
+    }
+];
+
+const projects: IProject[] = [
+    {
+        title: "Valorant Crosshairs",
+        project_description: "This project is a crosshair display and generator for the popular first person shooter, Valorant. The generator offering allows users to create crosshairs outside of the game which can then be exported and used within the game",
+        technology_description: "Made using a mix of React, Scss, and Typescript.",
+        button_text: "Visit here",
+        target: "/valorant",
+        image: ValorantLogo
+    },
+    {
+        title: "Path finding algorithms",
+        project_description: "Table based implementation of Djikstra's and A* search path finding algorithms.",
+        technology_description: "Made using a mix of React, Scss, and Typescript.",
+        button_text: "Visit here",
+        target: "/path-find",
+        image: ValorantLogo
+    },
+    {
+        title: "Third project",
+        project_description: "Project description",
+        technology_description: "Technology description",
+        button_text: "Go",
+        target: "/skills",
+        image: ValorantLogo
     }
 ];
 
@@ -54,10 +83,10 @@ export const Main = () => {
             setDisplayVerticalNav(false);
         }
 
-    }, [scrollPosition]);
+    }, [scrollPosition, displayVerticalNav]);
 
     useEffect(() => {
-        if (!displayVerticalNav && currentSection > 0) {
+        if (currentSection > 0) {
             setDisplayVerticalNav(true);
         }
         setCurrentNavMode(navLinks[currentSection].mode);
@@ -88,63 +117,42 @@ export const Main = () => {
                     <MainNav horizontal={false} links={navLinks} colorMode={currentNavMode}/>
                 </div>
                 <div id="main" className="main-section">
-                    <MainBio links={ navLinks }/>
-                    <MainBioSocials/>
-                    <SectionNav upwards={false} target={"#projects"} visible={currentSection === 0} sectionNumber={1} setSection={setCurrentSection}/>
-                </div>
-                <div id="projects" className="main-section">
-                    <SectionNav upwards={true} target={"#main"} visible={currentSection === 1} sectionNumber={0} setSection={setCurrentSection}/>
-                    <div className="main-projects-section" style={{opacity: currentSection === 1 ? 1 : 0}}>
-                        <div className="main-projects-section-title-container">
-                            <h1 className="main-projects-section-title" style={{color: "#4F85AC"}}>
-                                PROJECTS
+                    <div className="main-section-body" style={{opacity: currentSection === 0 ? 1 : 0}}>
+                        <div className="main-main-section-title-container">
+                            <h1 className="main-main-section-title" style={{color: "#BC3333"}}>
+                                MAIN
                             </h1>
                         </div>
-                        <div style={{width: "70%"}}>
-                            <div className="main-section__gallery">
-                                <div className="main-section__gallery-piece" style={{marginTop: "100px"}}>
-                                    <div style={{display: "flex", background: "#F8F8F8", borderRadius: "16px", paddingRight: "8px"}}>
-                                        <a href="/valorant" style={{height: "250px"}}>
-                                            <img src={ValorantLogo} alt={"Valorant Logo"} className="main-section__gallery-piece-image"/>
-                                        </a>
-                                        <div style={{marginLeft: "16px"}}>
-                                            <h2>
-                                                Valorant Crosshairs
-                                            </h2>
-                                            <p>
-                                                Crosshair display and generator for the popular first person shooter, Valorant.
-                                            </p>
-                                            <p>
-                                                This project is created in React, SCSS, and Typescript to display and create different crosshairs.
-                                            </p>
-                                            <a href="/valorant" style={{fontSize: "16px", fontWeight: 600}}>
-                                                Visit here
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="main-section__gallery-piece" style={{flexDirection: "row-reverse", marginTop: "40px"}}>
-                                    <div style={{marginRight: "16px"}}>
-                                        <h2>
-                                            Path finding algorithms
-                                        </h2>
-                                        <p>
-                                            Table based implementation of Djikstra's and A* search path finding algorithms.
-                                        </p>
-                                        <a href="/path-find" style={{fontSize: "16px", fontWeight: 600}}>
-                                            Take a look
-                                        </a>
-                                    </div>
+                        <MainBio links={ navLinks }/>
+                        <MainBioSocials/>
+                        <SectionNav upwards={false} target={"#projects"} visible={currentSection === 0}/>
+                    </div>
+                </div>
+                <div id="projects" className="main-section">
+                    <div className="main-section-body" style={{opacity: currentSection === 1 ? 1 : 0}}>
+                        <SectionNav upwards={true} target={"#main"} visible={currentSection === 1}/>
+                        <div className="main-projects-section">
+                            <div className="main-projects-section-title-container">
+                                <h1 className="main-projects-section-title" style={{color: "#4F85AC"}}>
+                                    PROJECTS
+                                </h1>
+                            </div>
+                            <div style={{width: "70%"}}>
+                                <div className="main-section__gallery">
+                                    <MainProject project={projects[0]} rightFacing={true} marginTop={100}/>
+                                    <MainProject project={projects[1]} rightFacing={false} marginTop={64}/>
+                                    <MainProject project={projects[2]} rightFacing={true} marginTop={64}/>
                                 </div>
                             </div>
                         </div>
+                        <SectionNav upwards={false} target={"#third"} visible={currentSection === 1}/>
                     </div>
-                    <SectionNav upwards={false} target={"#third"} visible={currentSection === 1} sectionNumber={2} setSection={setCurrentSection}/>
                 </div>
                 <div id="third" className="main-section">
-                    <SectionNav upwards={true} target={"#projects"} visible={currentSection === 2} sectionNumber={1} setSection={setCurrentSection}/>
-                    <div style={{width: "100%", height: "100%"}}>
-
+                    <div className="main-section-body" style={{opacity: currentSection === 2 ? 1 : 0}}>
+                        <SectionNav upwards={true} target={"#projects"} visible={currentSection === 2}/>
+                        <div style={{width: "100%", height: "100%"}}>
+                        </div>
                     </div>
                 </div>
             </div>

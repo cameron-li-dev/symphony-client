@@ -1,0 +1,21 @@
+.main-section__gallery-piece {
+  display: flex;
+  flex: 1;
+}
+
+.main-section__gallery-piece-background {
+  display: flex;
+  background: #F8F8F8;
+  border-radius: 16px;
+  min-width: 50%;
+}
+
+.main-section__gallery-piece a {
+  height: 250px;
+}
+
+.main-section__gallery-piece-image {
+  width: 250px;
+  background: black;
+  border-radius: 16px;
+}
