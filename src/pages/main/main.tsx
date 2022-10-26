@@ -5,6 +5,7 @@ import MainBioSocials from "../../components/main/main-bio/main-bio-socials/main
 import { INavLink } from "../../data/interfaces/INavLink";
 import MainNav from "../../components/main/main-nav/main-nav";
 import ValorantLogo from "../../images/valorant-logo_brandlogos.net_kghsj.png";
+import SectionNav from "../../components/main/section-nav/section-nav";
 
 const navLinks: INavLink[] = [
     {
@@ -27,7 +28,7 @@ const navLinks: INavLink[] = [
 export const Main = () => {
     const [scrollPosition, setScrollPosition] = React.useState(0);
     const [navPosition, setNavPosition] = React.useState(700);
-    const [currentSection, setCurrentSection] = React.useState(1);
+    const [currentSection, setCurrentSection] = React.useState(0);
     const [currentNavMode, setCurrentNavMode] = React.useState(navLinks[currentSection].mode);
     const [displayVerticalNav, setDisplayVerticalNav] = React.useState(false);
 
@@ -38,9 +39,7 @@ export const Main = () => {
             setScrollPosition(content.scrollTop);
 
             let findSection = Math.round(content.scrollTop / (window.innerHeight * 0.9));
-            if (findSection > 0) {
-                setCurrentSection(findSection);
-            }
+            setCurrentSection(findSection);
         }
     };
 
@@ -55,11 +54,14 @@ export const Main = () => {
             setDisplayVerticalNav(false);
         }
 
-    }, [currentSection, scrollPosition]);
+    }, [scrollPosition]);
 
     useEffect(() => {
+        if (!displayVerticalNav && currentSection > 0) {
+            setDisplayVerticalNav(true);
+        }
         setCurrentNavMode(navLinks[currentSection].mode);
-    }, [currentSection]);
+    }, [currentSection, displayVerticalNav]);
 
     useEffect(() => {
         const content = document.getElementById('main-content');
@@ -88,33 +90,37 @@ export const Main = () => {
                 <div id="main" className="main-section">
                     <MainBio links={ navLinks }/>
                     <MainBioSocials/>
+                    <SectionNav upwards={false} target={"#projects"} visible={currentSection === 0} sectionNumber={1} setSection={setCurrentSection}/>
                 </div>
                 <div id="projects" className="main-section">
-                    <div className="main-projects-section">
+                    <SectionNav upwards={true} target={"#main"} visible={currentSection === 1} sectionNumber={0} setSection={setCurrentSection}/>
+                    <div className="main-projects-section" style={{opacity: currentSection === 1 ? 1 : 0}}>
                         <div className="main-projects-section-title-container">
-                            <h1 className="main-projects-section-title">
+                            <h1 className="main-projects-section-title" style={{color: "#4F85AC"}}>
                                 PROJECTS
                             </h1>
                         </div>
                         <div style={{width: "70%"}}>
                             <div className="main-section__gallery">
                                 <div className="main-section__gallery-piece" style={{marginTop: "100px"}}>
-                                    <a href="/valorant">
-                                        <img src={ValorantLogo} alt={"Valorant Logo"} style={{background: "black", width: "250px", borderRadius: "16px"}}/>
-                                    </a>
-                                    <div style={{marginLeft: "16px"}}>
-                                        <h2>
-                                            Valorant Crosshairs
-                                        </h2>
-                                        <p>
-                                            Crosshair display and generator for the popular first person shooter, Valorant.
-                                        </p>
-                                        <p>
-                                            This project is created in React, SCSS, and Typescript to display and create different crosshairs.
-                                        </p>
-                                        <a href="/valorant" style={{fontSize: "16px", fontWeight: 600}}>
-                                            Visit here
+                                    <div style={{display: "flex", background: "#F8F8F8", borderRadius: "16px", paddingRight: "8px"}}>
+                                        <a href="/valorant" style={{height: "250px"}}>
+                                            <img src={ValorantLogo} alt={"Valorant Logo"} className="main-section__gallery-piece-image"/>
                                         </a>
+                                        <div style={{marginLeft: "16px"}}>
+                                            <h2>
+                                                Valorant Crosshairs
+                                            </h2>
+                                            <p>
+                                                Crosshair display and generator for the popular first person shooter, Valorant.
+                                            </p>
+                                            <p>
+                                                This project is created in React, SCSS, and Typescript to display and create different crosshairs.
+                                            </p>
+                                            <a href="/valorant" style={{fontSize: "16px", fontWeight: 600}}>
+                                                Visit here
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="main-section__gallery-piece" style={{flexDirection: "row-reverse", marginTop: "40px"}}>
@@ -133,8 +139,10 @@ export const Main = () => {
                             </div>
                         </div>
                     </div>
+                    <SectionNav upwards={false} target={"#third"} visible={currentSection === 1} sectionNumber={2} setSection={setCurrentSection}/>
                 </div>
                 <div id="third" className="main-section">
+                    <SectionNav upwards={true} target={"#projects"} visible={currentSection === 2} sectionNumber={1} setSection={setCurrentSection}/>
                     <div style={{width: "100%", height: "100%"}}>
 
                     </div>

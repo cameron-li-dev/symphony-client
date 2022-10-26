@@ -42,6 +42,7 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
     width: 100vw;
     height: 100vh;
     background: white;
+    position: relative;
 }
 
 .main-projects-section {
@@ -51,6 +52,7 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
     width: 100%;
     flex: 1;
     color: black;
+    transition: opacity $global-load-slow;
 }
 
 .main-projects-section-title-container {
@@ -79,4 +81,14 @@ $framework-blue-gradient: linear-gradient(90deg, $framework-blue 0%, $framework-
 .main-section__gallery-piece {
     display: flex;
     flex: 1;
+}
+
+.main-section__gallery-piece a {
+    height: 250px;
+}
+
+.main-section__gallery-piece-image {
+    width: 250px;
+    background: black;
+    border-radius: 16px;
 }

@@ -1,0 +1,18 @@
+@import "../../../styles/globals";
+
+.section-navigator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  background: #f0ecec;
+  height: 40px;
+  opacity: 0.5;
+  transition: $global-load-slow;
+}
+
+.section-navigator:hover {
+  height: 50px;
+  opacity: 0.75;
+}
